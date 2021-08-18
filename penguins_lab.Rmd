@@ -1,0 +1,96 @@
+---
+title: "Penguins Lab"
+author: "Mia"
+date: "8/17/2021"
+output: html_document
+---
+
+### Objectives
+- Connect to Github to retrieve this script
+- Pull an update to the script
+- The object orientation of R
+- Functions & Arguments
+- Different types of values: numeric vs. character
+- Simple data manipulation
+- Graphing
+- Statistical tests
+- There is always more than one way to do things
+
+## Base R Versus Libraries
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Looking at the data. View your dataset, find your column names.
+
+```{r}
+View(penguins)
+
+colnames(penguins)
+```
+
+## Filter the gentoo and adelie species.
+
+```{r}
+filter(penguins, )
+
+OR 
+
+penguins <- penguins %>% 
+  filter(species == )
+```
+
+## Data manipulation
+
+```{r}
+points <- c(point_low, point_high)
+```
+
+## Non-numeric objects
+
+```{r}
+height <- c("short", "short", "short", "short", "short", "short", "short", 
+  "tall", "tall", "tall", "tall", "tall", "tall", "tall") 
+
+height <- c(rep("short", 7), rep("tall", 7))
+
+height <- as.data.frame(height)
+```
+
+## Data manipulation
+```{r}
+bball <- cbind(points, height)
+```
+
+## Looking at raw data
+
+```{r}
+#bball
+
+#head(bball)
+
+#View(bball)
+```
+
+## Graphing
+
+```{r}
+boxplot(points ~ height, data = bball) 
+
+ggplot(bball, 
+        aes(x = height, y = points, fill = height)) +
+        geom_boxplot()
+```
+
+## Statistical tests
+
+```{r}
+t.test(points ~ height, data = bball)
+
+mod_0 <- lm(points ~ height, data = bball)
+
+summary(mod_0)
+```
+

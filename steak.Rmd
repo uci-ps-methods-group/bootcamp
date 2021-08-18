@@ -1,5 +1,0 @@
----
-title: "steak"
-output: html_document
----
-Pickles

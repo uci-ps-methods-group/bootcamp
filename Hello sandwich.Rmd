@@ -1,6 +1,0 @@
----
-title: "Hello sandwich"
-output: html_document
----
-
-Pickles and lettuce and cheese
