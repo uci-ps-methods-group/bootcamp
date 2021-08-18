@@ -73,7 +73,7 @@ two_species <- penguins %>%
   filter(species == "Adelie" | species == "Gentoo")
 ```
 
-## Graphing
+## Make a box plot using your new two_species set looking at the differences between bill length of the two species of penguin. Add color based on the two species!
 
 ```{r}
 boxplot(bill_length_mm ~ species, data = two_species) 
@@ -90,12 +90,12 @@ two_species %>%
     geom_boxplot()
 ```
 
-## Statistical tests
+## Run a t-test and a linear regression to see if there is a significant difference between the two species bill length averages. Hint use bill_length_mm for your dependent variable and species as your independent variable. 
 
 ```{r}
-t.test(points ~ height, data = bball)
+t.test(bill_length_mm ~ species, data = two_species)
 
-mod_0 <- lm(points ~ height, data = bball)
+mod_0 <- lm(bill_length_mm ~ species, data = two_species)
 
 summary(mod_0)
 ```
