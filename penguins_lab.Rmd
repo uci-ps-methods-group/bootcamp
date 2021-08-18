@@ -73,25 +73,21 @@ two_species <- penguins %>%
   filter(species == "Adelie" | species == "Gentoo")
 ```
 
-What 
-## Looking at raw data
-
-```{r}
-#bball
-
-#head(bball)
-
-#View(bball)
-```
-
 ## Graphing
 
 ```{r}
-boxplot(points ~ height, data = bball) 
+boxplot(bill_length_mm ~ species, data = two_species) 
 
-ggplot(bball, 
-        aes(x = height, y = points, fill = height)) +
+ggplot(two_species, 
+        aes(x = species, y = bill_length_mm, fill = species)) +
         geom_boxplot()
+
+#OR 
+
+two_species %>% 
+  ggplot(
+    aes(x = species, y = bill_length_mm, fill = species)) + 
+    geom_boxplot()
 ```
 
 ## Statistical tests
