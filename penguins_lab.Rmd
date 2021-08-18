@@ -1,7 +1,7 @@
 ---
 title: "Penguins Lab"
-author: "Mia"
-date: "8/17/2021"
+author: "Insert Student Name"
+date: "Insert Date"
 output: html_document
 ---
 
@@ -15,6 +15,7 @@ output: html_document
 - Graphing
 - Statistical tests
 - There is always more than one way to do things
+- Knit final result into a PDF
 
 ## Base R Versus Libraries
 
@@ -100,3 +101,4 @@ mod_0 <- lm(bill_length_mm ~ species, data = two_species)
 summary(mod_0)
 ```
 
+## Knit your final result into a pdf for your own reference and to learn how to create an assignment that could be turned in for future homework.
