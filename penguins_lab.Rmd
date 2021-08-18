@@ -23,47 +23,57 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## Looking at the data. View your dataset, find your column names.
+## Looking at the data. View your dataset, find your column names, and find the dimensions of the dataset.
 
 ```{r}
 View(penguins)
 
+dim(penguins)
+
 colnames(penguins)
+
+#OR
+
+penguins %>% 
+  View()
+
+penguins %>% 
+  dim()
+
+penguins %>% 
+  colnames()
+
 ```
 
-## Filter the gentoo and adelie species.
+## What kind of variable is species?  And bill length? Use the class function and don't forget your $ unless using the pipe operator!
 
 ```{r}
-filter(penguins, )
+class(penguins$species)
+
+class(penguins$bill_length_mm)
+
+#OR 
+
+penguins$species %>% 
+  class()
+
+penguins$bill_length_mm %>% 
+  class()
+```
+
+
+## Filter the gentoo and adelie species, and put it in a new dataset called `two_species`.
+
+```{r}
+two_species <- filter(penguins, species == "Adelie" | species == "Gentoo")
 
 OR 
 
-penguins <- penguins %>% 
-  filter(species == )
+two_species <- penguins %>% 
+  filter(species == "Adelie" | species == "Gentoo")
 ```
 
-## Data manipulation
-
-```{r}
-points <- c(point_low, point_high)
-```
-
-## Non-numeric objects
-
-```{r}
-height <- c("short", "short", "short", "short", "short", "short", "short", 
-  "tall", "tall", "tall", "tall", "tall", "tall", "tall") 
-
-height <- c(rep("short", 7), rep("tall", 7))
-
-height <- as.data.frame(height)
-```
-
-## Data manipulation
-```{r}
-bball <- cbind(points, height)
-```
-
+What 
 ## Looking at raw data
 
 ```{r}
