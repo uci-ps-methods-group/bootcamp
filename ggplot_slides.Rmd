@@ -1,0 +1,57 @@
+---
+title: "GGPlot Slides"
+author: "Melina Much, Ph.D. Candidate"
+date: "8/23/2021"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+## GGplot: What is it?
+
+- Package for creating visualizations based on the "Grammar of Graphics"
+- Part of the tidyverse
+
+## GGplot Basic Intuition
+
+It is a three part process that includes:
+
+- Specifying Data
+- Mapping Aesthetics
+- Adding a Geometric Layer
+
+## Titanic Data
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+glimpse(penguins)
+```
+
+## Step 1 
+
+Add your data layer.
+
+```{r}
+ggplot(data = penguins)
+```
+
+## Step 2
+
+Add an aesthetic layer. We are adding an x-axis here. 
+
+```{r}
+ggplot(data = penguins,
+       aes(x = species))
+```
+
+## Step 3 
+
+Add your geometric layer. We are creating a bar plot for the different penguin species! NOTE! The geometric layer is outside of the parenthesis. It is added outside with an addition sign.
+
+```{r}
+ggplot(data = penguins,
+       aes(x = species)) + 
+        geom_bar()
+```
+
