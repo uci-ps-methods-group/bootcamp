@@ -1,0 +1,85 @@
+---
+title: "bball_lecture"
+output: html_document
+---
+
+### Objectives
+
+- The object orientation of R
+- Functions & Arguments
+- Different types of values: numeric vs. character
+- Simple data manipulation
+- Graphing
+- Statistical tests
+- There is always more than one way to do things
+
+## Base R Versus Libraries
+
+```{r}
+library(ggplot2) 
+```
+
+## Making a vector by hand, objects, and simple functions
+
+```{r}
+point_low <- c(3, 5, 6, 8, 9, 1, 4)
+```
+
+##  More complex functions with arguments
+
+```{r}
+point_high <- sample(10:20, 7)
+```
+
+## Data manipulation
+
+```{r}
+points <- c(point_low, point_high)
+```
+
+## Non-numeric objects
+
+```{r}
+height <- c("short", "short", "short", "short", "short", "short", "short", 
+  "tall", "tall", "tall", "tall", "tall", "tall", "tall") 
+
+height <- c(rep("short", 7), rep("tall", 7))
+
+height <- as.data.frame(height)
+```
+
+## Data manipulation
+```{r}
+bball <- cbind(points, height)
+```
+
+## Looking at raw data
+
+```{r}
+bball
+
+head(bball)
+
+View(bball)
+```
+
+## Graphing
+
+```{r}
+boxplot(points ~ height, data = bball) 
+
+ggplot(bball, 
+        aes(x = height, y = points, fill = height)) +
+        geom_boxplot()
+```
+
+## Statistical tests
+
+```{r}
+t.test(points ~ height, data = bball)
+
+mod_0 <- lm(points ~ height, data = bball)
+
+summary(mod_0)
+```
+
