@@ -32,9 +32,7 @@ Another common way to look at data is through crosstabs! Crosstabs are tables wi
 # Gender x Party ID
 
 ```{r, echo=FALSE}
-
 pander(prop.table(table(cces_2016$gender, cces_2016$partyid)))
-
 ```
 
 # Gender x Ideology
@@ -83,8 +81,10 @@ These plots and tables tell us about the men and women that are in this data set
 ```{r}
 t.test(ideology~gender, data=cces_2016) # T test for Ideology
 ```
+
+
 ```{r}
-t.test(partyid~gender, data=cces_2016)
+t.test(partyid~gender, data=cces_2016) # T test for Ideology
 ```
  
 
