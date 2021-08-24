@@ -84,17 +84,17 @@ ggplot(data = d1, aes(x = woman, y = ideology)) +
 
 Interestingly the box plots reveal that while the distribution of ideology is practically identical for men and women, however, women on average seem to drift towards being Democratic more often then not. Men appear to be split evenly between democrats and republicans. 
 
-To get an even more detailed look at the distribution of party id by gender in order to find out what is driving this observed difference density plot is used with females in red and males in blue.
-
-```{r, warning = FALSE, echo=FALSE}
- ggplot( data = d1, aes(x = partyid)) +
-  geom_density(adjust = 1.4) +
-  aes(colour = female) +
-  labs(title = "") +
-  theme(legend.position = "right") 
+These plots and tables tell us about the men and women that are in this data set (the sample) but it dosen't mean that this is nesasarly the case if we looked at the whole population.
+ to help us gain ifrence about that larger population we can use a foraml staistical test to help us understannd how conviced we are that the difrences or non difrence that we observed in the population. 
+ 
+```{r}
+t.test(ideology~gender, data=cces_2016) # T test for Ideology
 ```
+```{r}
+t.test(partyid~gender, data=cces_2016)
+```
+ 
 
-The density plot reveals that men and women are pretty close on the Republican side, but many more men than women are independent or are leaners. Women are on the whole more Democratic. 
 
 # Discussion
 
