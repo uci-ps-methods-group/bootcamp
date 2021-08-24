@@ -1,0 +1,89 @@
+---
+title: "warmup.exs"
+author: "Kyle Wanger"
+date: "2/21/2020"
+output: html_document
+---
+
+
+
+```{r, include=FALSE}
+library(pander)
+library(mosaic)
+```
+
+
+
+```{r, include=FALSE}
+d1 <- read.csv("~/Documents/Resurch methods Document/ResurchMethods/CCES.csv")
+```
+
+### Motivation
+In the US political party and Political ideology a thought to be very closely connected. With people who are more conservative bing republicans and those that are more liberal being democrats. Just because the is true on average though doesn't mean that it always is for all groups though.
+
+### Research Question: 
+**Does distrabution of party ID and Idioligy look difrent for men and women?**
+
+
+```{r}
+ggplot(data = d1, aes(x = female, y = ideology)) + geom_boxplot()  + labs(title = "")
+```
+
+
+```{r}
+ggplot(data = d1, aes(x = female, y = ideology)) + geom_boxplot()  + labs(title = "")
+```
+
+### Data Exploration
+
+To get a feel for the data I made 2 crosstabs one with sex by party id and a second for by sex and ideology.
+
+#### Sex x Party ID
+```{r, echo=FALSE}
+pander(prop.table(table(d1$female,d1$partyid)))
+```
+
+#### Sex x Ideioligy
+```{r, echo=FALSE}
+pander(prop.table(table(d1$female,d1$ideology)))
+```
+
+Judging by the tables there does not seem to be a strong association between sex and party ID or ideology and the distribution across the two tables looks similar in many ways. 
+
+To get a better sense of how these variables are associated box plots were made using the same variables.
+
+```{r, warning = FALSE, echo=FALSE}
+ggplot(data = d1, aes(x = female, y = partyid)) +
+  geom_boxplot()  +
+  theme(legend.position = "right") +
+  labs(title = "")
+ggplot(data = d1, aes(x = female, y = ideology)) +
+  geom_boxplot()  +
+  theme(legend.position = "right") +
+  labs(title = "")
+```
+
+Interestingly the box plots reveal that while the distribution of of theology is practical identical for men and women, however women on average seem to drift towards being democratic more often then not, where as men appear to be split evenly between democrats and republicans. 
+
+To get an even more detailed look at the distribution of party id by genend in order to sus out what is driving this observed difference density plot is used with females in red and males in blue.
+
+```{r, warning = FALSE, echo=FALSE}
+ ggplot( data = d1, aes(x = partyid)) +
+  geom_density(adjust = 1.4) +
+  aes(colour = female) +
+  labs(title = "") +
+  theme(legend.position = "right") 
+```
+
+
+The density plot reveals that whereas females and males are pretty close on the more republican side. many more men then women are independent or simply lean towards one party or the other. Woman but those women that are missing in the center of the distribution are showing up on the more democratic side.
+
+### Discution
+
+This exploratory research reveals that while ideology is identically distributed between those of men and women there party id is not with more women identifying as democrat is puts into dought the strong link that is assumed to exist between party ID and Ideology. Of the association between the Ideology and party was a s strong as it is usually portrayed as then we would expect them to be distribed simalerly between the both men and women (*I am going to cut it off hear, but in your lab wright ups I expect you to formulate a hypothesis for where ever trend you find in your Lab*)
+
+
+
+
+
+
