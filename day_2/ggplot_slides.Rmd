@@ -55,3 +55,104 @@ ggplot(data = penguins,
         geom_bar()
 ```
 
+## Plain English Explanation
+
+- Create a ggplot using the penguins data frame.
+- Map the species to the x-axis.
+- Add a layer of a bar plot.
+
+## Example with Continuous Variable
+
+```{r}
+ggplot(data = penguins,
+       aes(x = flipper_length_mm)) + 
+        geom_histogram()
+```
+
+## What if we wanted to use a pipe?
+
+```{r}
+#Note the warning!
+penguins %>% 
+ggplot(aes(x = flipper_length_mm)) + 
+        geom_histogram()
+```
+
+## Lets play with color! 
+
+Color and pipes! We can do it all. You can find more colors [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r}
+penguins %>% 
+ggplot(aes(x = species, fill = species)) + 
+        geom_bar()
+```
+
+## Two Variable Visualization - Categorical 
+
+Lets make two. 
+
+The first is our standard bar chart, and lets add color for which island the penguin is from. 
+
+```{r}
+penguins %>% 
+ggplot(aes(x = species, fill = island)) + 
+        geom_bar()
+```
+## Cont. 
+
+The second, we will make a standardized bar chart, which makes the total bar be out of 1. This allows us to look at proportions easily!
+
+```{r}
+penguins %>% 
+ggplot(aes(x = species, fill = island)) + 
+        geom_bar(position = "fill")
+```
+
+## Two Variables - Continuous & Categorical
+
+Lets look at bill length and species!
+
+```{r}
+
+penguins %>% 
+ggplot(aes(x = species,
+           y = bill_length_mm, fill = species))  +
+  geom_violin()
+
+```
+
+## Two Variables - All Continuous Numeric!
+
+Lets look at bill length and depth!
+
+```{r}
+penguins %>% 
+ggplot(aes(x = bill_depth_mm,
+           y = bill_length_mm))  +
+  geom_point()
+```
+
+## Three Variables! Wow!
+
+Note we are adding a color argument as a third variable (species).
+
+```{r}
+ggplot(penguins,
+       aes(x = bill_depth_mm,
+           y = bill_length_mm,
+           color = species)) +
+  geom_point()
+```
+
+## Hmmm...Can we use something other than dots?
+
+```{r}
+penguins %>% 
+ggplot(aes(x = bill_depth_mm,
+           y = bill_length_mm,
+           shape = species,
+           color = species)) +
+  geom_point()
+```
+
