@@ -1,6 +1,6 @@
 ---
 title: "Ideology Example"
-author: "Kyle McWagner"
+author: "Melina Much & Kyle McWagner"
 output: html_document
 ---
 
@@ -8,11 +8,12 @@ output: html_document
 # Libraries
 library(pander)
 library(mosaic)
+library(tidyverse)
 ```
 
 ```{r, include=FALSE}
 # Read in Your Data 
-cces_2016 <- read.csv("~/Documents/Resurch methods Document/ResurchMethods/CCES.csv")
+
 ```
 
 ### Motivation
@@ -24,33 +25,6 @@ In the US political party and political ideology are thought to be very closely 
 
 Say we wanted to explore the relationship between partisanship and gender, and ideology and gender. We could make boxplots to look at this relationship.
 
-```{r}
-ggplot(data = cces_2016, aes(x = female, y = ideology)) + 
-  geom_boxplot()  + 
-  labs(title = "")
-
-# OR 
-cces_2016 %>% 
-ggplot(
-  aes(x = female, y = ideology)) + 
-  geom_boxplot()  + 
-  labs(title = "")
-```
-
-
-```{r}
-ggplot(data = d1, aes(x = female, y = ideology)) + 
-  geom_boxplot()  + 
-  labs(title = "")
-
-# OR 
-
-cces_2016 %>% 
-  ggplot(aes(x = female, y = ideology)) + 
-  geom_boxplot()  + 
-  labs(title = "")
-```
-
 ## Data Exploration
 
 Another common way to look at data is through crosstabs! Crosstabs are tables with counts or percetages for different values of a variable.
@@ -58,7 +32,9 @@ Another common way to look at data is through crosstabs! Crosstabs are tables wi
 # Gender x Party ID
 
 ```{r, echo=FALSE}
-pander(prop.table(table(d1$gender, d1$partyid)))
+
+pander(prop.table(table(cces_2016$gender, cces_2016$partyid)))
+
 ```
 
 # Gender x Ideology
@@ -72,14 +48,31 @@ Judging by the tables there does not seem to be a strong association between gen
 To get a better sense of how these variables are associated box plots were made using the same variables.
 
 ```{r, warning = FALSE, echo=FALSE}
-ggplot(data = d1, aes(x = woman, y = partyid)) +
+
+ggplot(data = cces_2016, aes(x = gender, y = partyid)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
-ggplot(data = d1, aes(x = woman, y = ideology)) +
+
+ggplot(data = cces_2016, aes(x = gender, y = ideology)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
+
+# Pipe Version
+
+cces_2016 %>% 
+  ggplot(aes(x = gender, y = partyid)) +
+  geom_boxplot()  +
+  theme(legend.position = "right") +
+  labs(title = "") 
+
+cces_2016 %>% 
+ggplot(aes(x = gender, y = ideology)) +
+  geom_boxplot()  +
+  theme(legend.position = "right") +
+  labs(title = "")
+
 ```
 
 Interestingly the box plots reveal that while the distribution of ideology is practically identical for men and women, however, women on average seem to drift towards being Democratic more often then not. Men appear to be split evenly between democrats and republicans. 
