@@ -1,15 +1,18 @@
 library(ggplot2) # explain base verses packages
 
-pointlow<-c(3,5,6,8,9,1,4) # Make a vector by hand, objects and simple functions
+pointlow <- c(3,5,6,8,9,1,4) # Make a vector by hand, objects and simple functions
 
-pointhigh<-sample(10:20,7) # More complex functions with arguments
+pointhigh <- sample(10:20,7) # More complex functions with arguments
 
-points<-c(pointlow,pointhigh) # data manipulation
+points <- c(pointlow,pointhigh) # data manipulation
+
 points<-as.data.frame(points)
 
-# Non numaric objects
-hight <- c("short","short","short","short","short","short","short","tall","tall","tall","tall","tall","tall","tall") 
-hight <- c(rep("short", 7),rep("tall", 7))
+# Non numeric objects
+
+height <- c("short","short","short","short","short","short","short","tall","tall","tall","tall","tall","tall","tall") 
+
+height <- c(rep("short", 7),rep("tall", 7))
 
 # data manipulation
 hight<- as.data.frame(hight) 
