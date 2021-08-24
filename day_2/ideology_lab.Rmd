@@ -1,0 +1,61 @@
+---
+title: "Day 2 Lab"
+author: "Insert Student Name"
+output: html_document
+---
+## Objectives and Motivation
+
+We are hoping that you both glean something about American politics, while implementing your new graphing tools!
+
+In the US, political party and political ideology are thought to be very closely connected. With people who are more conservative being Republicans, and those that are more liberal being Democrats. Just because the is true on average, doesn't mean that it true for all groups. Lets investigate this!
+
+# Research Question: 
+
+**Does the distribution of party ID and ideology look different racial groups? Specifically, does the distribution of party ID and ideology differ for those are Black versus those that aren't?**
+
+# Load in our packages
+
+```{r, message=FALSE}
+library(pander)
+library(mosaic)
+library(tidyverse)
+```
+
+# Read in our data
+
+Identify your variables of interest for this question.
+
+```{r}
+
+```
+
+# Data Exploration
+
+Find the five number summary for your variables of interest.
+
+```{r}
+
+```
+
+# Graphing
+
+Make a graph with at least two variables of interest that are relevant to this question.
+
+```{r}
+
+```
+
+# Perform a T-Test
+
+We want to see if there is a systematic difference between **. Perform a t-test between:  
+
+```{r}
+
+```
+
+
+
+# Discussion
+
+
+
