@@ -7,5 +7,35 @@ output: slidy_presentation
 
 ## Statistical Learning - Foundations
 
+- In any statistical framework or paradigm, we are looking to *learn from data* about the world around us. 
+
+- We as researchers will formulate hypotheses, or have intuitions about relationships that exist in a given dataset.
+
+- This knowledge helps specify **input variables** (which we call independent variables or predictors), and **output variables** (which we call dependent variables). 
+    
+- Our input variables we believe have an influence or effect our output variables. 
+
+## Some Notation
+
+- We often represent our independent/input/predictor variables as $X$ and our output/dependent variables as $Y$.
+
+- In most cases we have a handful of $X's$ and one $Y$. There are some cases where we deviate from this norm, and we are happy to talk about those at the end of the course if you all are interested.
+
+- We assume there is a relationship between these variables (our inputs and outputs).
+
+- We call this relationship $f$. In most cases we don't know what $f$ is.
+
+- Therefore the relationship between our inputs and outputs can be represented as: 
+
+$$Y = f(x)$$
+
+## Your Job as a Statistical Researcher
+
+- In order to glean something from these variables, we have to make educated guesses about the *form* of the relationship between $X$ and $Y$. 
+
+**The foundation of statistical learning is therefore specifying the functional form $f$ in the relationship between $X$ and $Y$.**
+
+- You have many options. Our job is to help prime you on how to choose $f$ and interpret $Y = f(x)$.
+
 
 
