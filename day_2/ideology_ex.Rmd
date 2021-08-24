@@ -73,18 +73,17 @@ ggplot(aes(x = gender, y = ideology)) +
 
 ```
 
-Interestingly the box plots reveal that while the distribution of ideology is practically identical for men and women, however, women on average seem to drift towards being Democratic more often then not. Men appear to be split evenly between democrats and republicans. 
+Interestingly the box plots reveal that while the distribution of ideology is practically identical for men and women, however, women on average seem to drift towards being Democratic more often then not. Men appear to be split evenly between Democrats and Republicans. 
 
-These plots and tables tell us about the men and women that are in this data set (the sample) but it dosen't mean that this is nesasarly the case if we looked at the whole population.
- to help us gain ifrence about that larger population we can use a foraml staistical test to help us understannd how conviced we are that the difrences or non difrence that we observed in the population. 
+These plots and tables tell us about the men and women that are in this data set (the sample) but it doesn't mean that this is necessarily the case if we looked at the whole population. To help us gain inference about that larger population we can use a formal statistical test to help us understand how convinced we are that the difference or lack therof that we observed in the population. 
  
 ```{r}
-t.test(ideology~gender, data=cces_2016) # T test for Ideology
+t.test(ideology ~ gender, data = cces_2016) # T test for Ideology
 ```
 
 
 ```{r}
-t.test(partyid~gender, data=cces_2016) # T test for Ideology
+t.test(partyid ~ gender, data = cces_2016) # T test for Ideology
 ```
  
 
