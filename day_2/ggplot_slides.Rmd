@@ -7,6 +7,11 @@ output:
     widescreen: true
     smaller: true
 ---
+
+## Why are we plotting?
+
+Plots are an intuitve way to explore trends in your data, and gain your bearings before starting statistical analysis. It also is an invaluable tool for representing your results to others in papers and presentations. 
+
 ## GGplot: What is it?
 
 - Package for creating visualizations based on the "Grammar of Graphics"
@@ -155,4 +160,17 @@ ggplot(aes(x = bill_depth_mm,
            color = species)) +
   geom_point()
 ```
+## Lets make it *really* easy!
+
+We want to start you off with mosaiac as well. While we feel confident in your ability to learn GGplot code, we also want you to have an intuitive way to get yourself started in your own projects. 
+
+Mosaic does just that. It provides a point and click interface to select variables and kinds of plots, while also returning ggplot code so you can see what it did. 
+
+```{r}
+library(mosaic)
+
+mplot(penguins)
+
+```
+
 
