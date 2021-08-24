@@ -1,0 +1,152 @@
+---
+title:  "Clearing the Decks"
+author: "Melina Much Ph.D."
+output: ioslides_presentation
+---
+
+## Welcome
+
+This is an R focused bootcamp for beginner and intermediate R users. We created this as graduate students to fill a gap that we faced during our time in the program. It is largely meant to bridge the gap between your entrace to the program, and the start of Prof. Levin's statistics sequence.
+
+## Topics
+
+- R, what is it?
+- Base, Tidyverse, Packages/Functions
+- Project Workflow
+- Style Guides
+
+## R, what is it?
+
+-**R** is a language and environment for statistical computing and graphics. It is *free* and *open source*. It is a more powerful version of things like STATA or SPSS.
+
+-**RStudio** is an integrated development environment that works on top of R software. It provides a more user friendly interface to work with R software.
+
+-The **“Comprehensive R Archive Network” (CRAN)** is a collection of sites which carry identical material, consisting of the R distribution(s), the contributed extensions, documentation for R, and binaries
+
+## Base, Tidyverse, Packages/Functions
+
+-**Base R** refers to the basic functions and languages that are present in the software without any further installation.
+
+-Tools designed beyond base R by professors, programmers, and statisticians are called **packages**. They can be freely added to your R to give you tools beyond Base.
+
+-**Tidyverse** is a system of packages for data manipulation, exploration, and visualization that share a common design philosophy of "tidiness." They share syntax styles and have their own style guide. I will encourage learning tidyverse *after* learning base R, as the tidyverse places a strong emphasis on human readability. 
+
+## Project Workflow
+
+1) Set **Project** within a directory that you can easily access 
+
+2) Use style guide to name projects, and *all* folders within that project 
+
+3) Use folders
+
+4) Use **R Markdown** whenever possible
+
+5) Repeat for *every* project
+
+## Style Guides
+
+1) [Tidyverse](https://style.tidyverse.org/)
+
+2) [Google](https://google.github.io/styleguide/Rguide.html)
+
+We will go over tidyverse...why? 
+
+## Tidyverse Styling
+
+**It is so tidy!**
+
+Prioritizes not just reproducibility across coders, but is *arguably* the most human readable. A few examples:
+
+**File names and object names** use underscores.
+
+*GOOD*
+
+fit_models.R
+
+utility_functions.R
+
+00_download.R
+
+01_explore.R
+
+...
+
+09_model.R
+
+10_visualize.R
+
+*Suboptimal*
+
+fit models.R
+
+foo.r
+
+stuff.r
+
+## Tidyverse Styling
+
+For **Commas and Parenthesis** always put a space after a comma, never before, just like in regular English. Do not put spaces inside or outside parentheses for regular function calls, also like regular English grammar.
+
+*Good*
+
+x[, 1]
+
+mean(x, na.rm = TRUE)
+
+## Tidyverse Styling
+
+*Suboptimal*
+
+x[,1]
+
+x[ ,1]
+
+x[ , 1]
+
+mean (x, na.rm = TRUE)
+
+mean( x, na.rm = TRUE )
+
+## Tidyverse Styling
+
+For **Infix operators** most infix operators (==, +, -, <-, etc.) should always be surrounded by spaces:
+
+*GOOD*
+
+height <- (feet * 12) + inches
+
+mean(x, na.rm = TRUE)
+
+*Suboptimal*
+
+height<-feet*12+inches
+
+mean(x, na.rm=TRUE)
+
+## Tidyverse Styling
+
+For **long lines** use indentation. 80 characters per line. Do one function on each line.
+
+*GOOD*
+
+```{r}
+#do_something_very_complicated(
+#  something = "that",
+#  requires = many,
+#  arguments = "some of which may be long"
+#)
+```
+
+*Suboptimal*
+
+```{r}
+#do_something_very_complicated("that", requires, many, arguments,
+#                              "some of which may be long"
+#                              )
+
+#do_something_very_complicated(something = "that", requires = many, arguments =
+#"some of which may be long")                              
+
+```
+
+
