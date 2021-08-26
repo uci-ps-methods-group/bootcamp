@@ -43,19 +43,37 @@ Melina Much, Ph.D. Candidate
 <li><p>We often represent our independent/input/predictor variables as <span class="math inline">\(X\)</span> and our output/dependent variables as <span class="math inline">\(Y\)</span>.</p></li>
 <li><p>In most cases we have a handful of <span class="math inline">\(X&#39;s\)</span> and one <span class="math inline">\(Y\)</span>. There are some cases where we deviate from this norm, and we are happy to talk about those at the end of the course if you all are interested.</p></li>
 <li><p>We assume there is a relationship between these variables (our inputs and outputs).</p></li>
-<li><p>We call this relationship <span class="math inline">\(f\)</span>.</p></li>
+<li><p>We call this relationship <span class="math inline">\(f\)</span>. In most cases we don’t know what <span class="math inline">\(f\)</span> is.</p></li>
 <li><p>Therefore the relationship between our inputs and outputs can be represented as:</p></li>
 </ul>
-<p><span class="math display">\[Y = f(x)\]</span></p>
+<p><span class="math display">\[Y = f(x) + \epsilon\]</span> - In $Y = f(x) + $, <span class="math inline">\(\epsilon\)</span> represents a random error term that is independent of <span class="math inline">\(X\)</span>.</p>
 </div>
 <div id="your-job-as-a-statistical-researcher" class="slide section level2">
 <h1>Your Job as a Statistical Researcher</h1>
 <ul>
 <li>In order to glean something from these variables, we have to make educated guesses about the <em>form</em> of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</li>
 </ul>
-<p><strong>The foundation of statistical learning is therefore choosing the functional form <span class="math inline">\(f\)</span> of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</strong></p>
+<p><strong>The foundation of statistical learning is therefore specifying the functional form <span class="math inline">\(f\)</span> in the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. In other words <span class="math inline">\(f\)</span> is the <em>systematic</em> information that <span class="math inline">\(X\)</span> provides aboout <span class="math inline">\(Y\)</span></strong></p>
 <ul>
-<li>You have many options. Our job is to help prime you on how to choose <span class="math inline">\(f\)</span> and interpret <span class="math inline">\(Y = f(x)\)</span>.</li>
+<li>You have many options. Our job is to help prime you on how to choose an estimate of <span class="math inline">\(f\)</span> (<span class="math inline">\(\hat{f}\)</span>) and interpret $Y = f(x) + $.</li>
+</ul>
+</div>
+<div id="errors" class="slide section level2">
+<h1>Errors</h1>
+<ul>
+<li><p>There will inevitably be a difference between <span class="math inline">\(f\)</span> and our estimate <span class="math inline">\(\hat{f}\)</span>.</p></li>
+<li><p>The difference between these two functions is our <strong>reducible error.</strong></p></li>
+<li><p>We could specify <span class="math inline">\(\hat{f}\)</span> to get a better picutre of <span class="math inline">\(Y\)</span>, therefore, that error is considered reducible.</p></li>
+<li><p><strong>Irreducible error</strong> comes from the fact that <span class="math inline">\(Y\)</span> is also a function of <span class="math inline">\(\epsilon\)</span> and is independent of our specification of <span class="math inline">\(f\)</span>.</p></li>
+<li><p>That means that regardless of how we specify <span class="math inline">\(f\)</span> we will always have some error!</p></li>
+</ul>
+</div>
+<div id="model-building-goals" class="slide section level2">
+<h1>Model Building Goals</h1>
+<ul>
+<li><p>This means that we want to build and use statistical models that get rid of as much reducible error as possible, within the constraints of the models that we are choosing</p></li>
+<li><p>There are <em>many</em> tradeoffs. This leads into discussions of traditional regression in comparison to more flexible machine learning models.</p></li>
+<li><p>There are also tradeoffs with</p></li>
 </ul>
 </div>
 
