@@ -27,7 +27,7 @@ library(palmerpenguins)
 ## Looking at the data. View your dataset, find your column names, and find the dimensions of the dataset.
 
 ```{r}
-View(penguins)
+#View(penguins)
 
 dim(penguins)
 
@@ -35,8 +35,8 @@ colnames(penguins)
 
 #OR
 
-penguins %>% 
-  View()
+#penguins %>% 
+#  View()
 
 penguins %>% 
   dim()
@@ -68,7 +68,7 @@ penguins$bill_length_mm %>%
 ```{r}
 two_species <- filter(penguins, species == "Adelie" | species == "Gentoo")
 
-OR 
+#OR 
 
 two_species <- penguins %>% 
   filter(species == "Adelie" | species == "Gentoo")
