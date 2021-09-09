@@ -70,12 +70,11 @@ Make a graph with at least two variables of interest that are relevant to this q
 
 # Perform a T-Test
 
-We want to see if there is a systematic difference between the distribution of party ID and ideology for Black and White individuals. Perform a t-test. 
+We want to see if there is a systematic difference between the distribution of party ID and ideology for Black and Non-Black individuals. Perform a t-test. 
 
 ```{r}
 
 ```
-
 
 
 # Discussion
