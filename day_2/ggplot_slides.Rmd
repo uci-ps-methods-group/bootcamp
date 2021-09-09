@@ -167,9 +167,9 @@ We want to start you off with mosaiac as well. While we feel confident in your a
 Mosaic does just that. It provides a point and click interface to select variables and kinds of plots, while also returning ggplot code so you can see what it did. 
 
 ```{r}
-library(mosaic)
+#library(mosaic)
 
-mplot(penguins)
+#mplot(penguins)
 
 ```
 
