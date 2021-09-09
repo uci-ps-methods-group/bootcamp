@@ -19,7 +19,7 @@ library(tidyverse)
 ### Motivation
 In the US political party and political ideology are thought to be very closely connected. Thoe who are more conservative are usually Republicans, and those that are more liberal are usually Democrats. Just because this is true on average, it doesn't mean that it is true for all groups.
 
-### Research Question: 
+### Research Question:
 
 **Does distribution of party ID and ideology look different for men and women?**
 
