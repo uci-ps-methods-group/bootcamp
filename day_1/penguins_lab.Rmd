@@ -5,7 +5,7 @@ date: "Insert Date"
 output: html_document
 ---
 
-### Objectives
+#### Objectives
 - Connect to Github to retrieve this script
 - Pull an update to the script
 - The object orientation of R
@@ -17,17 +17,19 @@ output: html_document
 - There is always more than one way to do things
 - Knit final result into a PDF
 
-## Base R Versus Libraries
+#### Loading Libraries 
 
-```{r}
+```{r, message=FALSE, include=TRUE}
 library(tidyverse)
 library(palmerpenguins)
 ```
 
-## Looking at the data. View your dataset, find your column names, and find the dimensions of the dataset.
+#### Looking at the data. View your dataset, find your column names, and find the dimensions of the dataset.
+
+For the purposes of Knitting this document afterwards, please use the View command, both in the console and in a chunk. Once you have used it in a chunk, try commenting it out. Remember your "#."
 
 ```{r}
-View(penguins)
+#View(penguins)
 
 dim(penguins)
 
@@ -35,8 +37,8 @@ colnames(penguins)
 
 #OR
 
-penguins %>% 
-  View()
+#penguins %>% 
+  #View()
 
 penguins %>% 
   dim()
@@ -46,7 +48,9 @@ penguins %>%
 
 ```
 
-## What kind of variable is species?  And bill length? Use the class function and don't forget your $ unless using the pipe operator!
+#### What kind of variable is species?  And bill length? Use the class function and don't forget your $ unless using the pipe operator!
+
+*Insert explanation here*
 
 ```{r}
 class(penguins$species)
@@ -63,20 +67,22 @@ penguins$bill_length_mm %>%
 ```
 
 
-## Filter the gentoo and adelie species, and put it in a new dataset called `two_species`.
+#### Filter the gentoo and adelie species, and put it in a new dataset called `two_species`.
 
 ```{r}
 two_species <- filter(penguins, species == "Adelie" | species == "Gentoo")
 
-OR 
+#OR 
 
 two_species <- penguins %>% 
   filter(species == "Adelie" | species == "Gentoo")
 ```
 
-## Make a box plot using your new two_species set looking at the differences between bill length of the two species of penguin. Add color based on the two species!
+#### Make a box plot using your new two_species set looking at the differences between bill length of the two species of penguin. Add color based on the two species! Explain and interpret this plot.
 
-```{r}
+*Insert explanation here*
+
+```{r, warning=FALSE}
 boxplot(bill_length_mm ~ species, data = two_species) 
 
 ggplot(two_species, 
@@ -91,7 +97,9 @@ two_species %>%
     geom_boxplot()
 ```
 
-## Run a t-test and a linear regression to see if there is a significant difference between the two species bill length averages. Hint use bill_length_mm for your dependent variable and species as your independent variable. 
+#### Run a t-test and a linear regression to see if there is a significant difference between the two species bill length averages. Hint use bill_length_mm for your dependent variable and species as your independent variable. 
+
+*Insert explanation of t-test and model here*
 
 ```{r}
 t.test(bill_length_mm ~ species, data = two_species)
@@ -101,4 +109,4 @@ mod_0 <- lm(bill_length_mm ~ species, data = two_species)
 summary(mod_0)
 ```
 
-## Knit your final result into a pdf for your own reference and to learn how to create an assignment that could be turned in for future homework.
+#### Knit your final result into a pdf for your own reference and to learn how to create an assignment that could be turned in for future homework.

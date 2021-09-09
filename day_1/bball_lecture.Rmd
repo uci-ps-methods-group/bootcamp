@@ -63,6 +63,13 @@ head(bball)
 View(bball)
 ```
 
+## Filter 
+
+```{r}
+short_folks <- filter(bball, height == "short")
+```
+
+
 ## Graphing
 
 ```{r}
