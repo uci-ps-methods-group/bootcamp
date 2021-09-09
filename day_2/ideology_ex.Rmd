@@ -90,7 +90,7 @@ We will have a small discussion about statistical significance and meaningful di
 
 # Discussion
 
-This research reveals that while the distrabution of ideology between men and women are very simaler,  this is not the case for party id, with more women identifying as Democrat. This casts some doubt on the strong link that is assumed between party ID and ideology. One might expect equal distributions of men and women in both party ID and ideology, but we found this isn't the case! 
+This research reveals that while the distribution of ideology between men and women are very simaler,  this is not the case for party id, with more women identifying as Democrat. This casts some doubt on the strong link that is assumed between party ID and ideology. One might expect equal distributions of men and women in both party ID and ideology, but we found this isn't the case! 
 
 
 
