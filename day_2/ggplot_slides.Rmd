@@ -1,5 +1,5 @@
 ---
-title: "GGPlot Slides"
+title: "GGPlot Lecture"
 author: "Melina Much, Ph.D. Candidate"
 date: "8/23/2021"
 output:
@@ -24,8 +24,6 @@ It is a three part process that includes:
 - Specifying Data
 - Mapping Aesthetics
 - Adding a Geometric Layer
-
-## Titanic Data
 
 ```{r}
 library(tidyverse)
@@ -131,7 +129,7 @@ ggplot(aes(x = species,
 
 Lets look at bill length and depth!
 
-```{r}
+```{r, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = bill_depth_mm,
            y = bill_length_mm))  +
@@ -142,7 +140,7 @@ ggplot(aes(x = bill_depth_mm,
 
 Note we are adding a color argument as a third variable (species).
 
-```{r}
+```{r, warning=FALSE}
 ggplot(penguins,
        aes(x = bill_depth_mm,
            y = bill_length_mm,
@@ -152,7 +150,7 @@ ggplot(penguins,
 
 ## Hmmm...Can we use something other than dots?
 
-```{r}
+```{r, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = bill_depth_mm,
            y = bill_length_mm,
