@@ -16,51 +16,62 @@ In the US, political party and political ideology are thought to be very closely
 Load in our packages.
 
 ```{r, message=FALSE}
-library(pander)
-library(mosaic)
-library(tidyverse)
+library(pander) # Makes objects like tables look nice when kniting 
+library(mosaic) # Along with lots of other helpful things mplot(dataset) will give you an easy graphical interface to get your graphs started.
+library(tidyverse) # Gives you the whole Tidyverse including ggplots2
+library(gridExtra) # using the grid.arrange(plot.object, plot.object, nrow = 1) function alws you to put ggplots side by side. 
 ```
 
 # Read in our data
 
-Identify your variables of interest for this question. Use your codebook! :)
-
 ```{r}
 
 ```
+
+**Identify your variables of interest for this question. *Use your codebook!* :)**
+
+ 
 
 # Data Exploration
 
-What is the mean of ideology? What does this mean? Insert an explanation below.
+**What is the mean of ideology? What does this mean? Insert an explanation below.**
 
 ```{r}
 
 ```
 
-What is the median of ideology?
+**What is the median of ideology?**
 
 ```{r}
 
 ```
 
 
-What is the standard deviation of ideology?
+**What is the standard deviation of ideology?**
 
 ```{r}
 
 ```
 
-Try using the summary() function to look at all of the above for ideology!
+**Try using the summary() function to look at all of the above for ideology!**
 
 ```{r}
 
 ```
 
-Looking at all of these numbers, what can you say about the distribution, center, and spread of ideology?
+**Looking at all of these numbers, what can you say about the distribution, center, and spread of ideology?**
+
 
 # Graphing
 
-Make a graph with at least two variables of interest that are relevant to this question. 
+**Make a histogram of ideology, does the histogram confirm or refute what you thought ideology looked like based on the numbers?**
+
+```{r}
+
+```
+
+
+**Make a graph with at least two variables of interest that are relevant to this question.**
 
 *Hint: Box Plots or Violin Plots would be appropriate here.*
 
@@ -70,15 +81,13 @@ Make a graph with at least two variables of interest that are relevant to this q
 
 # Perform a T-Test
 
-We want to see if there is a systematic difference between the distribution of party ID and ideology for Black and White individuals. Perform a t-test. 
+**We want to see if there is a systematic difference between the distribution of party ID and ideology for Black and Non-Black individuals. Perform the t-tests.**
 
 ```{r}
 
 ```
 
 
-
 # Discussion
 
-
-
+**What do we learn form looking at this data in regards to how the Black indaviguals and non-black indaviguals navigat the relatioship between Party ID and political idioligy?**

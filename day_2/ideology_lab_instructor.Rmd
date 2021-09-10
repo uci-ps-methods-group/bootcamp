@@ -19,53 +19,77 @@ Load in our packages.
 library(pander)
 library(mosaic)
 library(tidyverse)
+library(gridExtra)
 ```
 
 # Read in our data
 
-Identify your variables of interest for this question. Use your codebook! :)
-
 ```{r}
-
+cces_2016 <- read.csv("~/Desktop/R Things/bootcamp/day_2/cces_2016.csv")
 ```
+
+*Identify your variables of interest for this question. Use your codebook! :)*
+
+I want to use the "black", "idioligy", and "partyid" varaibuls to do this analaisis. 
+
 
 # Data Exploration
 
 What is the mean of ideology? What does this mean? Insert an explanation below.
 
 ```{r}
-
+mean(cces_2016$ideology, na.rm = TRUE)
 ```
 
 What is the median of ideology?
 
 ```{r}
-
+median(cces_2016$ideology, na.rm = TRUE)
 ```
 
 
 What is the standard deviation of ideology?
 
 ```{r}
-
+sd(cces_2016$ideology, na.rm = TRUE)
 ```
 
 Try using the summary() function to look at all of the above for ideology!
 
 ```{r}
-
+summary(cces_2016$ideology)
 ```
 
 Looking at all of these numbers, what can you say about the distribution, center, and spread of ideology?
 
+
 # Graphing
+
+Make a histogram of ideology, does the histogram confirm or refute what you thought ideology looked like based on the numbers?
+
+```{r}
+ggplot(data = cces_2016, aes(x = ideology)) +
+       geom_histogram(binwidth = 0.16) +
+       labs(title = "")
+```
+
 
 Make a graph with at least two variables of interest that are relevant to this question. 
 
 *Hint: Box Plots or Violin Plots would be appropriate here.*
 
 ```{r}
+plot1<-ggplot(data = cces_2016, aes(x = black, y = partyid)) +
+  geom_boxplot(aes(fill = black), show.legend = FALSE) +
+  theme(legend.title = element_blank()) +
+  labs(title = "Being Black & Party Identification", x = "Black", y = "Party Id")
 
+
+plot2<-ggplot(data = cces_2016, aes(x = black, y = ideology)) +
+  geom_boxplot(aes(fill = black), show.legend = FALSE) +
+  labs(title = "Being Black & Left/Right Ideoligy", x = "Black", y = "Left/Right Ideoligy")
+
+grid.arrange(plot1, plot2, nrow = 1)
 ```
 
 # Perform a T-Test
@@ -73,11 +97,13 @@ Make a graph with at least two variables of interest that are relevant to this q
 We want to see if there is a systematic difference between the distribution of party ID and ideology for Black and Non-Black individuals. Perform the t-tests. 
 
 ```{r}
-
+t.test(partyid~black, cces_2016)
+t.test(ideology~black, cces_2016)
 ```
 
 
 # Discussion
 
+Clearly the way that Black indaviguals navigate the relationship between their party ID and their political idioligy is quight difrent form the way that non-black indaviguals do. Why might this be? That is an area of active invstagation and I would storngly recomind the work of Jane Junn. 
 
 
