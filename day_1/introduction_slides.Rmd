@@ -78,11 +78,13 @@ We will go over tidyverse...why?
 
 **It is so tidy!**
 
-Prioritizes not just reproducibility across coders, but is *arguably* the most human readable. A few examples:
+Prioritizes not just reproducibility across coders, but is *arguably* the most human readable. I will show you a few examples in the next slides, but the style guides will mostly come into play when you start writing up your Labs.
+
+## Tidyverse Styling
 
 **File names and object names** use underscores.
 
-*GOOD*
+*Good*
 
 fit_models.R
 
@@ -97,6 +99,8 @@ utility_functions.R
 09_model.R
 
 10_visualize.R
+
+## Tidyverse Styling
 
 *Suboptimal*
 
