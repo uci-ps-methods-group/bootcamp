@@ -1,0 +1,79 @@
+---
+title: "Introduction to Statistical Learning"
+author: "Melina Much, Ph.D. Candidate"
+date: "8/23/2021"
+output: slidy_presentation
+---
+
+## Statistical Learning - Foundations
+
+- In any statistical framework or paradigm, we are looking to *learn from data* about the world around us. 
+
+- We as researchers will formulate hypotheses, or have intuitions about relationships that exist in a given dataset.
+
+## A Tale of Two Data Forms
+
+- When learning from our data we want to get as close as we can to understanding causal relationships. We want to know, does $X$ cause $Y$. Our ability to do that changes based on the kinds of data we have. 
+
+- **Observational data** comes from measuring a sample of the population, where we are not looking to effect the respondents, and we are not manipulating their environment. We are simply looking to *observe.* This data will have **confounders,** or variables that influence $Y$ that are not $X$ that we are not accounting for in our modeling.
+
+- **Experimental data** controls for external forces by leveraging the benefits of random assignment. This data has randomly assigned treatment and control groups, which alleviates the issues of confounders since the only functional difference between the groups in their assignment of the treatment, and that choice was made at random. 
+
+- *Experiments allow us to address causality because you can isolate the treatment effect. Observational studies do not. Observational studies can look at **associations**but never directly make causal claims.*
+
+- Our work will deal largely with observational data.
+
+
+## Kinds of Variables
+
+- This knowledge helps specify **input variables** (which we call independent variables or predictors), and **output variables** (which we call dependent variables). 
+    
+- Our input variables we believe have an influence or effect our output variables. 
+
+## Some Notation
+
+- We often represent our independent/input/predictor variables as $X$ and our output/dependent variables as $Y$.
+
+- In most cases we have a handful of $X's$ and one $Y$. There are some cases where we deviate from this norm, and we are happy to talk about those at the end of the course if you all are interested.
+
+- We assume there is a relationship between these variables (our inputs and outputs).
+
+- We call this relationship $f$. In most cases we don't know what $f$ is.
+
+- Therefore the relationship between our inputs and outputs can be represented as: 
+
+$$Y = f(x) + \epsilon$$
+- In $Y = f(x) + \epsilon $, $\epsilon$ represents a random error term that is independent of $X$.
+
+## Your Job as a Statistical Researcher
+
+- In order to glean something from these variables, we have to make educated guesses about the *form* of the relationship between $X$ and $Y$. 
+
+**The foundation of statistical learning is therefore specifying the functional form $f$ in the relationship between $X$ and $Y$. In other words $f$ is the *systematic* information that $X$ provides about $Y$**
+
+- You have many options. Our job is to help prime you on how to choose an estimate of $f$ ($\hat{f}$) and interpret $Y = f(x) + \epsilon $.
+
+## Errors
+
+- There will inevitably be a difference between $f$ and our estimate $\hat{f}$.
+
+- The difference between these two functions is our **reducible error.**
+
+- We could specify $\hat{f}$ to get a better picutre of $Y$, therefore, that error is considered reducible.
+
+- **Irreducible error** comes from the fact that $Y$ is also a function of $\epsilon$ and is independent of our specification of $f$.
+
+- That means that regardless of how we specify $f$ we will always have some error!
+
+ 
+## Model Building Goals
+
+- This means that we want to build and use statistical models that get rid of as much reducible error as possible, within the constraints of the models that we are choosing
+
+- There are *many* tradeoffs. This leads into discussions of traditional regression in comparison to more flexible machine learning models. 
+
+- There are also tradeoffs with 
+
+
+
+

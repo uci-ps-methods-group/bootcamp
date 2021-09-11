@@ -1,6 +1,6 @@
 ---
 title:  "Clearing the Decks"
-author: "Melina Much Ph.D."
+author: "Melina Much Ph.D. Candidate"
 output: ioslides_presentation
 ---
 
@@ -19,9 +19,9 @@ This is an R focused bootcamp for beginner and intermediate R users. We created 
 
 -**R** is a language and environment for statistical computing and graphics. It is *free* and *open source*. It is a more powerful version of things like STATA or SPSS.
 
--**RStudio** is an integrated development environment that works on top of R software. It provides a more user friendly interface to work with R software.
+-**RStudio** is an integrated development environment that works on top of R software. It provides a more user friendly interface to work with R.
 
--The **“Comprehensive R Archive Network” (CRAN)** is a collection of sites which carry identical material, consisting of the R distribution(s), the contributed extensions, documentation for R, and binaries
+-The **“Comprehensive R Archive Network” (CRAN)** is a collection of sites which carry identical material, consisting of the R distribution(s), the contributed extensions, documentation for R, and binaries.
 
 ## Base, Tidyverse, Packages/Functions
 
@@ -43,7 +43,30 @@ This is an R focused bootcamp for beginner and intermediate R users. We created 
 
 5) Repeat for *every* project
 
+## Version Control 
+
+- We use Github to keep track of all changes made to our code, and make it easy for our group to collaborate and share files. 
+
+- This is an important part of project work flow, because it allows you to revert to previous versions of a project when you make a mistake.
+
+- It also increases transparent research practices in the scientific community, which can help reduce impacts of the reproducibility crisis.
+
+- For our purposes in the Bootcamp, it provides an easy way for you to access all the code for the week at once. 
+
+## Connecting Github
+
+```{r}
+
+library(gitcreds)
+
+#gitcreds_set()
+
+```
+
+
 ## Style Guides
+
+Style guides create conistency across coding groups, and increase the ability of you or someone else to be able to decifer your code later on down the line. 
 
 1) [Tidyverse](https://style.tidyverse.org/)
 
