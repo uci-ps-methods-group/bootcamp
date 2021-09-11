@@ -1,7 +1,7 @@
 ---
 title:  "Clearing the Decks"
 author: "Melina Much Ph.D. Candidate"
-output: ioslides_presentation
+output: slidy_presentation
 ---
 
 ## Welcome
@@ -154,7 +154,7 @@ mean(x, na.rm=TRUE)
 
 For **long lines** use indentation. 80 characters per line. Do one function on each line.
 
-*GOOD*
+*Good*
 
 ```{r}
 #do_something_very_complicated(

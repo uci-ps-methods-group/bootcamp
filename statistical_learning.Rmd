@@ -13,11 +13,11 @@ output: slidy_presentation
 
 ## A Tale of Two Data Forms
 
-- When learning from our data we want to get as close as we can to understanding causal relationships. We want to know, does $X$ cause $Y$. Our ability to do that changes based on the kinds of data we have. 
+- When learning from our data we want to get as close as we can to understanding causal relationships. We want to know: does $X$ cause $Y$? Our ability to do that changes based on the kinds of data we have. 
 
 - **Observational data** comes from measuring a sample of the population, where we are not looking to effect the respondents, and we are not manipulating their environment. We are simply looking to *observe.* This data will have **confounders,** or variables that influence $Y$ that are not $X$ that we are not accounting for in our modeling.
 
-- **Experimental data** controls for external forces by leveraging the benefits of random assignment. This data has randomly assigned treatment and control groups, which alleviates the issues of confounders since the only functional difference between the groups in their assignment of the treatment, and that choice was made at random. 
+- **Experimental data** controls for external forces (variables hard to account for) by leveraging the benefits of random assignment. Experimental data has randomly assigned treatment and control groups, which alleviates the issues of confounders since the only functional difference between the groups is their arbitrary assignment into treatment or control.
 
 - *Experiments allow us to address causality because you can isolate the treatment effect. Observational studies do not. Observational studies can look at **associations**but never directly make causal claims.*
 
@@ -34,7 +34,7 @@ output: slidy_presentation
 
 - We often represent our independent/input/predictor variables as $X$ and our output/dependent variables as $Y$.
 
-- In most cases we have a handful of $X's$ and one $Y$. There are some cases where we deviate from this norm, and we are happy to talk about those at the end of the course if you all are interested.
+- In most cases we have a handful of $X's$ and one $Y$.
 
 - We assume there is a relationship between these variables (our inputs and outputs).
 
