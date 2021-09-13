@@ -1,0 +1,75 @@
+---
+title: "bball_student"
+output: html_document
+---
+
+### Objectives
+
+- The object orientation of R
+- Functions & Arguments
+- Different types of values: numeric vs. character
+- Simple data manipulation
+- Graphing
+- Statistical tests
+- There is always more than one way to do things
+
+## Base R Versus Libraries
+
+```{r}
+
+```
+
+## Making a vector by hand, objects, and simple functions
+
+```{r}
+
+```
+
+##  More complex functions with arguments
+
+```{r}
+
+```
+
+## Data manipulation
+
+```{r}
+
+```
+
+## Non-numeric objects
+
+```{r}
+
+```
+
+## Data manipulation
+```{r}
+
+```
+
+## Looking at raw data
+
+```{r}
+
+```
+
+## Filter 
+
+```{r}
+
+```
+
+
+## Graphing
+
+```{r}
+
+```
+
+## Statistical tests
+
+```{r}
+
+```
+

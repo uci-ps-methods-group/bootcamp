@@ -17,6 +17,7 @@ output: html_document
 
 ```{r}
 library(ggplot2) 
+library(tidyverse)
 ```
 
 ## Making a vector by hand, objects, and simple functions
