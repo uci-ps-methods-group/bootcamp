@@ -6,13 +6,22 @@ output: slidy_presentation
 
 ## Welcome
 
-This is an R focused bootcamp for beginner and intermediate R users. We created this as graduate students to fill a gap that we faced during our time in the program. It is largely meant to bridge the gap between your entrace to the program, and the start of Prof. Levin's statistics sequence.
+- This is an R focused bootcamp for beginner and intermediate R users. 
+
+- We created this as graduate students to fill a gap that we faced during our time in the program. 
+
+- We like to focus on collaboration and repetition to leverage our collective knowledge to make our lives easier during the program.
+
+- It is largely meant to bridge the gap between your entrance to the program, and the start of Prof. Levin's statistics sequence.
 
 ## Topics
 
 - R, what is it?
+
 - Base, Tidyverse, Packages/Functions
+
 - Project Workflow
+
 - Style Guides
 
 ## R, what is it?
@@ -27,7 +36,7 @@ This is an R focused bootcamp for beginner and intermediate R users. We created 
 
 -**Base R** refers to the basic functions and languages that are present in the software without any further installation.
 
--Tools designed beyond base R by professors, programmers, and statisticians are called **packages**. They can be freely added to your R to give you tools beyond Base.
+-Tools which use **functions** designed beyond base R by professors, programmers, and statisticians are called **packages**. They can be freely added to your R to give you tools beyond Base. Functions are sets of “self contained” modules of code that accomplish a specific task.
 
 -**Tidyverse** is a system of packages for data manipulation, exploration, and visualization that share a common design philosophy of "tidiness." They share syntax styles and have their own style guide. I will encourage learning tidyverse *after* learning base R, as the tidyverse places a strong emphasis on human readability. 
 

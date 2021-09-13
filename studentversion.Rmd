@@ -1,0 +1,90 @@
+---
+title: "Penguins  Lab"
+author: "Insert Student Name"
+date: "Insert Date"
+output: html_document
+---
+
+#### Objectives
+- Connect to Github to retrieve this script
+- Pull an update to the script
+- The object orientation of R
+- Functions & Arguments
+- Different types of values: numeric vs. character
+- Simple data manipulation
+- Graphing
+- Statistical tests
+- There is always more than one way to do things
+- Knit final result into a PDF
+
+#### Loading Libraries 
+
+```{r, message=FALSE, include=TRUE}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+#### Looking at the data. 
+
+View your dataset.
+
+*For the purposes of Knitting this document afterwards, please use the View command, both in the console and in a chunk. Once you have used it in a chunk, try commenting it out. Remember your "#."*
+
+```{r}
+#View()
+```
+
+Find your column names.
+```{r}
+```
+
+Find the dimensions of the dataset.
+```{r}
+```
+
+
+#### What are the classes of variables?
+
+
+Use the class function and don't forget your $ unless using the pipe operator!
+
+What kind of variable is species? 
+
+```{r}
+
+```
+
+What kind of variable is bill length? 
+
+```{r}
+\
+```
+
+*Insert explanation here*
+
+
+#### Filter the gentoo and adelie species, and put it in a new dataset called `two_species`.
+
+```{r}
+
+```
+
+#### Making Boxplots
+
+Make a box plot using your new two_species set looking at the differences between bill length of the two species of penguin. Add color based on the two species! Explain and interpret this plot.
+
+*Insert explanation here*
+
+```{r, warning=FALSE}
+
+```
+
+#### Run a t-test and a linear regression to see if there is a significant difference between the two species bill length averages. Hint use bill_length_mm for your dependent variable and species as your independent variable. 
+
+*Insert explanation of t-test and model here*
+
+```{r}
+
+```
+
+#### Knit your final result for your own reference and to learn how to create an assignment that could be turned in for future homework.

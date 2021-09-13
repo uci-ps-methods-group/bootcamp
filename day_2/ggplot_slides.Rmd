@@ -156,6 +156,7 @@ ggplot(aes(x = bill_depth_mm,
            color = species)) +
   geom_point()
 ```
+
 ## Lets make it *really* easy!
 
 We want to start you off with mosaiac as well. While we feel confident in your ability to learn GGplot code, we also want you to have an intuitive way to get yourself started in your own projects. 
