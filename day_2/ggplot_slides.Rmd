@@ -1,11 +1,9 @@
 ---
 title: "GGPlot Lecture"
-author: "Melina Much, Ph.D. Candidate"
+author: "Melina Much, Ph.D. Candidate; Mine Dogucu, Ph.D."
 date: "8/23/2021"
 output:
-  ioslides_presentation:
-    widescreen: true
-    smaller: true
+  slidy_presentation
 ---
 
 ## Why are we plotting?
@@ -25,7 +23,7 @@ It is a three part process that includes:
 - Mapping Aesthetics
 - Adding a Geometric Layer
 
-```{r}
+```{r, message=FALSE}
 library(tidyverse)
 library(palmerpenguins)
 glimpse(penguins)
@@ -35,7 +33,7 @@ glimpse(penguins)
 
 Add your data layer.
 
-```{r}
+```{r, message=FALSE}
 ggplot(data = penguins)
 ```
 
@@ -43,7 +41,7 @@ ggplot(data = penguins)
 
 Add an aesthetic layer. We are adding an x-axis here. 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 ggplot(data = penguins,
        aes(x = species))
 ```
@@ -52,7 +50,7 @@ ggplot(data = penguins,
 
 Add your geometric layer. We are creating a bar plot for the different penguin species! NOTE! The geometric layer is outside of the parenthesis. It is added outside with an addition sign.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 ggplot(data = penguins,
        aes(x = species)) + 
         geom_bar()
@@ -66,7 +64,7 @@ ggplot(data = penguins,
 
 ## Example with Continuous Variable
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 ggplot(data = penguins,
        aes(x = flipper_length_mm)) + 
         geom_histogram()
@@ -74,7 +72,7 @@ ggplot(data = penguins,
 
 ## What if we wanted to use a pipe?
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 #Note the warning!
 penguins %>% 
 ggplot(aes(x = flipper_length_mm)) + 
@@ -85,7 +83,7 @@ ggplot(aes(x = flipper_length_mm)) +
 
 Color and pipes! We can do it all. You can find more colors [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = species, fill = species)) + 
         geom_bar()
@@ -97,7 +95,7 @@ Lets make two.
 
 The first is our standard bar chart, and lets add color for which island the penguin is from. 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = species, fill = island)) + 
         geom_bar()
@@ -106,7 +104,7 @@ ggplot(aes(x = species, fill = island)) +
 
 The second, we will make a standardized bar chart, which makes the total bar be out of 1. This allows us to look at proportions easily!
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = species, fill = island)) + 
         geom_bar(position = "fill")
@@ -116,7 +114,7 @@ ggplot(aes(x = species, fill = island)) +
 
 Lets look at bill length and species!
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 
 penguins %>% 
 ggplot(aes(x = species,
@@ -129,7 +127,7 @@ ggplot(aes(x = species,
 
 Lets look at bill length and depth!
 
-```{r, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = bill_depth_mm,
            y = bill_length_mm))  +
@@ -140,7 +138,7 @@ ggplot(aes(x = bill_depth_mm,
 
 Note we are adding a color argument as a third variable (species).
 
-```{r, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 ggplot(penguins,
        aes(x = bill_depth_mm,
            y = bill_length_mm,
@@ -150,7 +148,7 @@ ggplot(penguins,
 
 ## Hmmm...Can we use something other than dots?
 
-```{r, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = bill_depth_mm,
            y = bill_length_mm,
@@ -164,7 +162,7 @@ We want to start you off with mosaiac as well. While we feel confident in your a
 
 Mosaic does just that. It provides a point and click interface to select variables and kinds of plots, while also returning ggplot code so you can see what it did. 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 #library(mosaic)
 
 #mplot(penguins)
