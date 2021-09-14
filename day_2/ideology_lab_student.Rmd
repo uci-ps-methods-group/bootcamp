@@ -53,13 +53,14 @@ library(gridExtra) # using the grid.arrange(plot.object, plot.object, nrow = 1) 
 
 ```
 
-**Try using the summary() function to look at all of the above for ideology!**
+**Try using the summary() function to look at all of the above for ideology.**
 
 ```{r}
 
 ```
 
 **Looking at all of these numbers, what can you say about the distribution, center, and spread of ideology?**
+
 
 
 # Graphing

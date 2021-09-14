@@ -1,0 +1,67 @@
+---
+title: "Ideology Student Walkthough"
+author: "Melina Much, Ph.D. Candidate and Kyle McWagner, Ph.D. Candidate"
+date: "9/14/2021"
+output: html_document
+---
+
+```{r, include=FALSE}
+# Libraries
+library(pander)
+library(mosaic)
+library(tidyverse)
+```
+
+```{r, include=FALSE}
+# Read in Your Data 
+
+```
+
+### Motivation
+In the US political party and political ideology are thought to be very closely connected. Thoe who are more conservative are usually Republicans, and those that are more liberal are usually Democrats. Just because this is true on average, it doesn't mean that it is true for all groups.
+
+### Research Question:
+
+**Does distribution of party ID and ideology look different for men and women?**
+
+Say we wanted to explore the relationship between partisanship and gender, and ideology and gender. We could make boxplots to look at this relationship.
+
+## Data Exploration
+
+Another common way to look at data is through crosstabs! Crosstabs are tables with counts or percetages for different values of a variable.
+
+# Gender x Party ID
+
+```{r, echo=FALSE}
+```
+
+# Gender x Ideology
+
+```{r, echo=FALSE}
+```
+
+Judging by the tables there does not seem to be a strong association between gender and party ID or ideology. The distribution across the two tables looks similar in many ways. Can you name some ways they are similar?
+
+To get a better sense of how these variables are associated box plots were made using the same variables.
+
+```{r, warning = FALSE, echo=FALSE}
+
+```
+
+Interestingly the box plots reveal that while the distribution of ideology is practically identical for men and women, however, women on average seem to drift towards being Democratic more often then not. Men appear to be split evenly between Democrats and Republicans. 
+
+These plots and tables tell us about the men and women that are in this data set (the sample) but it doesn't mean that this is necessarily the case if we looked at the whole population. To help us gain inference about that larger population we can use a formal statistical test to help us understand how convinced we are that the difference or lack thereof that we observed in the population. 
+ 
+```{r}
+```
+
+
+```{r}
+```
+ 
+We will have a small discussion about statistical significance and meaningful differences. We also will briefly touch on statistical power, but it is a more advanced topic, so don't get discouraged here!
+
+# Discussion
+
+This research reveals that while the distribution of ideology between men and women are very similar,  this is not the case for party id, with more women identifying as Democrat. This casts some doubt on the strong link that is assumed between party ID and ideology. One might expect equal distributions of men and women in both party ID and ideology, but we found this isn't the case! 
+

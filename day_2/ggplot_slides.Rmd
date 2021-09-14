@@ -109,6 +109,7 @@ penguins %>%
 ggplot(aes(x = species, fill = island)) + 
         geom_bar()
 ```
+
 ## Cont. 
 
 The second, we will make a standardized bar chart, which makes the total bar be out of 1. This allows us to look at proportions easily!
