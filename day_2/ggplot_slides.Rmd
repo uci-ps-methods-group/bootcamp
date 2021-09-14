@@ -8,11 +8,16 @@ output:
 
 ## Why are we plotting?
 
-Plots are an intuitve way to explore trends in your data, and gain your bearings before starting statistical analysis. It also is an invaluable tool for representing your results to others in papers and presentations. 
+-Plots are an intuitive way to explore trends in your data, and gain your bearings before starting statistical analysis. 
+
+-It also is an invaluable tool for representing your results to others in papers and presentations. 
 
 ## GGplot: What is it?
 
 - Package for creating visualizations based on the "Grammar of Graphics"
+
+- "Grammar of Graphics" utilized the idea that you can build every graph from the same components: a data set, a coordinate system, and geoms which are visual marks that represent data points
+
 - Part of the tidyverse
 
 ## GGplot Basic Intuition
@@ -22,6 +27,8 @@ It is a three part process that includes:
 - Specifying Data
 - Mapping Aesthetics
 - Adding a Geometric Layer
+
+## Penguin Data
 
 ```{r, message=FALSE}
 library(tidyverse)
@@ -71,6 +78,8 @@ ggplot(data = penguins,
 ```
 
 ## What if we wanted to use a pipe?
+
+Pipes (from the tidyverse) allows us to pass the result of one function/argument to the other one in sequence.
 
 ```{r, message=FALSE, warning=FALSE}
 #Note the warning!
@@ -159,7 +168,7 @@ ggplot(aes(x = bill_depth_mm,
 
 ## Lets make it *really* easy!
 
-We want to start you off with mosaiac as well. While we feel confident in your ability to learn GGplot code, we also want you to have an intuitive way to get yourself started in your own projects. 
+We want to start you off with mosaic as well. While we feel confident in your ability to learn GGplot code, we also want you to have an intuitive way to get yourself started in your own projects. 
 
 Mosaic does just that. It provides a point and click interface to select variables and kinds of plots, while also returning ggplot code so you can see what it did. 
 
@@ -170,4 +179,7 @@ Mosaic does just that. It provides a point and click interface to select variabl
 
 ```
 
+## Cheet Sheet
+
+GGplot cheat [sheet](https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf).
 
