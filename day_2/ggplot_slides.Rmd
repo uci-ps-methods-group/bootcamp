@@ -121,10 +121,9 @@ ggplot(aes(x = species, fill = island)) +
 
 ## Two Variables - Continuous & Categorical
 
-Lets look at bill length and species!
+Lets look at bill length and species! We could use violins or boxplots. We will try both, and notice how you can get a better visual sense of density with violin.
 
 ```{r, message=FALSE, warning=FALSE}
-
 penguins %>% 
 ggplot(aes(x = species,
            y = bill_length_mm, fill = species))  +
@@ -176,7 +175,6 @@ Mosaic does just that. It provides a point and click interface to select variabl
 #library(mosaic)
 
 #mplot(penguins)
-
 ```
 
 ## Cheet Sheet
