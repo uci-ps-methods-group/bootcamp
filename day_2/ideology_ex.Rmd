@@ -7,17 +7,17 @@ output: html_document
 ```{r, include=FALSE}
 # Libraries
 library(pander)
-library(mosaic)
+library(gridExtra)
 library(tidyverse)
 ```
 
 ```{r, include=FALSE}
 # Read in Your Data 
-
+cces_2016 <- read.csv("~/Desktop/R Things/bootcamp/day_2/cces_2016.csv")
 ```
 
 ### Motivation
-In the US political party and political ideology are thought to be very closely connected. Thoe who are more conservative are usually Republicans, and those that are more liberal are usually Democrats. Just because this is true on average, it doesn't mean that it is true for all groups.
+In the US political party and political ideology are thought to be very closely connected. Those who are more conservative are usually Republicans, and those that are more liberal are usually Democrats. Just because this is true on average, it doesn't mean that it is true for all groups.
 
 ### Research Question:
 
@@ -27,7 +27,41 @@ Say we wanted to explore the relationship between partisanship and gender, and i
 
 ## Data Exploration
 
-Another common way to look at data is through crosstabs! Crosstabs are tables with counts or percetages for different values of a variable.
+*Identify your variables of interest for this question. Use your codebook! :)*
+
+I want to use the "gender", "ideology", and "partyid" variables to do this analysis. 
+
+
+# Data Exploration
+
+What is the mean of partyid? What does this mean? Insert an explanation below.
+
+```{r}
+mean(cces_2016$partyid, na.rm = TRUE)
+```
+
+What is the median of partyid?
+
+```{r}
+median(cces_2016$partyid, na.rm = TRUE)
+```
+
+
+What is the standard deviation of partyid?
+
+```{r}
+sd(cces_2016$partyid, na.rm = TRUE)
+```
+
+Try using the summary() function to look at many of these elimants of partyid and a couple more!
+
+```{r}
+summary(cces_2016$partyid)
+```
+
+Looking at all of these numbers, what can you say about the distribution, center, and spread of ideology?
+
+Another common way to look at data is through crosstabs! Crosstabs are tables with counts or percetages for different values of a variable often against another variable.
 
 # Gender x Party ID
 
@@ -38,7 +72,7 @@ pander(prop.table(table(cces_2016$gender, cces_2016$partyid)))
 # Gender x Ideology
 
 ```{r, echo=FALSE}
-pander(prop.table(table(d1$gender, d1$ideology)))
+pander(prop.table(table(cces_2016$gender, cces_2016$ideology)))
 ```
 
 Judging by the tables there does not seem to be a strong association between gender and party ID or ideology. The distribution across the two tables looks similar in many ways. Can you name some ways they are similar?
@@ -47,15 +81,17 @@ To get a better sense of how these variables are associated box plots were made 
 
 ```{r, warning = FALSE, echo=FALSE}
 
-ggplot(data = cces_2016, aes(x = gender, y = partyid)) +
+party <- ggplot(data = cces_2016, aes(x = gender, y = partyid)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
 
-ggplot(data = cces_2016, aes(x = gender, y = ideology)) +
+ideology <- ggplot(data = cces_2016, aes(x = gender, y = ideology)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
+
+grid.arrange(party,ideology, ncol=2)
 
 # Pipe Version
 
@@ -75,7 +111,7 @@ ggplot(aes(x = gender, y = ideology)) +
 
 Interestingly the box plots reveal that while the distribution of ideology is practically identical for men and women, however, women on average seem to drift towards being Democratic more often then not. Men appear to be split evenly between Democrats and Republicans. 
 
-These plots and tables tell us about the men and women that are in this data set (the sample) but it doesn't mean that this is necessarily the case if we looked at the whole population. To help us gain inference about that larger population we can use a formal statistical test to help us understand how convinced we are that the difference or lack thereof that we observed in the population. 
+These plots and tables tell us about the men and women that are in this data set (the sample), but it doesn't mean that this is necessarily the case if we looked at the whole population. To help us gain inference about that larger population we can use a formal statistical test to help us understand how convinced we are that the difference or lack thereof that we observed in the population. 
  
 ```{r}
 t.test(ideology ~ gender, data = cces_2016) # T test for Ideology
