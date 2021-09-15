@@ -9,11 +9,20 @@ output: slidy_presentation
 
 - In choosing our $\hat{f}$ we need to look at our data to understand what sort of options are logical. 
 
-- In the cases we had yesterday, we had data that appeared to be linearly related, therefore linear regression was a great option.
+- In the cases we had yesterday, we had data that appeared to be linearly related with continuous outputs, therefore linear regression was a great option.
 
-- Today we will explore a common case when linearity does not apply. Often researchers will have an outcome variable that is binary. This means the outcome is either $0$ or $1$.This usually is found in cases of whether an event did or did not happen.
+- Today we will explore a common case when linearity does not apply. Often researchers will have an outcome variable that is binary. This means the outcome is either $0$ or $1$. This usually is found in cases of whether an event did or did not happen.
 
 - What are some examples of this? If a person voted, they would have a $1$, and if a person did not vote, they would have a $0$.
+
+## Transformation
+
+- In order for our predictions to make sense, we need to transform our inputs to work within a $0-1$ scale. 
+
+- This works within the Maximum Likelihood (MLE) framework.
+
+- We do this transformation by using **link** functions (specifically the **logit link function**), which connects the predictors in a model with the expected value of the dependent (output) variable in a linear way, and makes the expected value be a probability bounded between $0-1$.
+
 
 ## Logit Link Function
 
@@ -28,7 +37,6 @@ $$
 - Because our $\beta$'s are run through this *link function* they are not directly interpretable in the same way linear regression $\beta$'s.
 
 - We interpret logged odds instead, which are the odds of 
-
 
 
 ## Lets Break it Down on a Graph

@@ -13,7 +13,7 @@ library(tidyverse)
 
 ```{r, include=FALSE}
 # Read in Your Data 
-cces_2016 <- read.csv("~/Desktop/R Things/bootcamp/day_2/cces_2016.csv")
+#cces_2016 <- read.csv("~/Desktop/R Things/bootcamp/day_2/cces_2016.csv")
 ```
 
 ### Motivation
@@ -37,26 +37,26 @@ I want to use the "gender", "ideology", and "partyid" variables to do this analy
 What is the mean of partyid? What does this mean? Insert an explanation below.
 
 ```{r}
-mean(cces_2016$partyid, na.rm = TRUE)
+mean(cces_2016_1$partyid, na.rm = TRUE)
 ```
 
 What is the median of partyid?
 
 ```{r}
-median(cces_2016$partyid, na.rm = TRUE)
+median(cces_2016_1$partyid, na.rm = TRUE)
 ```
 
 
 What is the standard deviation of partyid?
 
 ```{r}
-sd(cces_2016$partyid, na.rm = TRUE)
+sd(cces_2016_1$partyid, na.rm = TRUE)
 ```
 
 Try using the summary() function to look at many of these elimants of partyid and a couple more!
 
 ```{r}
-summary(cces_2016$partyid)
+summary(cces_2016_1$partyid)
 ```
 
 ```{r}
@@ -70,15 +70,19 @@ Another common way to look at data is through crosstabs! Crosstabs are tables wi
 # Gender x Party ID
 
 ```{r, echo=FALSE}
+<<<<<<< HEAD
 pander(
   prop.table(
   table(cces_2016$gender, cces_2016$partyid)))
+=======
+pander(prop.table(table(cces_2016_1$gender, cces_2016_1$partyid)))
+>>>>>>> 3ecb80b871de14341be0496cf2b5f902536ff427
 ```
 
 # Gender x Ideology
 
 ```{r, echo=FALSE}
-pander(prop.table(table(cces_2016$gender, cces_2016$ideology)))
+pander(prop.table(table(cces_2016_1$gender, cces_2016_1$ideology)))
 ```
 
 Judging by the tables there does not seem to be a strong association between gender and party ID or ideology. The distribution across the two tables looks similar in many ways. Can you name some ways they are similar?
@@ -87,12 +91,17 @@ To get a better sense of how these variables are associated box plots were made 
 
 ```{r, warning = FALSE, echo=FALSE}
 
-party <- ggplot(data = cces_2016, aes(x = gender, y = partyid)) +
+party <- ggplot(data = cces_2016_1, aes(x = gender, y = partyid)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
+<<<<<<< HEAD
 party
 ideology <- ggplot(data = cces_2016, aes(x = gender, y = ideology)) +
+=======
+party
+ideology <- ggplot(data = cces_2016_1, aes(x = gender, y = ideology)) +
+>>>>>>> 3ecb80b871de14341be0496cf2b5f902536ff427
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
@@ -101,13 +110,13 @@ grid.arrange(party,ideology, ncol=2)
 
 # Pipe Version
 
-cces_2016 %>% 
+cces_2016_1 %>% 
   ggplot(aes(x = gender, y = partyid)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "") 
 
-cces_2016 %>% 
+cces_2016_1 %>% 
 ggplot(aes(x = gender, y = ideology)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
@@ -120,14 +129,18 @@ Interestingly the box plots reveal that while the distribution of ideology is pr
 These plots and tables tell us about the men and women that are in this data set (the sample), but it doesn't mean that this is necessarily the case if we looked at the whole population. To help us gain inference about that larger population we can use a formal statistical test to help us understand how convinced we are that the difference or lack thereof that we observed in the population. 
  
 ```{r}
-t.test(ideology ~ gender, data = cces_2016) # T test for Ideology
+t.test(ideology ~ gender, data = cces_2016_1) # T test for Ideology
 ```
 
 
 ```{r}
+<<<<<<< HEAD
 0.2585213     -     0.1972236 
 0.06/7
 t.test(partyid ~ gender, data = cces_2016) # T test for Ideology
+=======
+t.test(partyid ~ gender, data = cces_2016_1) # T test for Ideology
+>>>>>>> 3ecb80b871de14341be0496cf2b5f902536ff427
 ```
  
 We will have a small discussion about statistical significance and meaningful differences. We also will briefly touch on statistical power, but it is a more advanced topic, so don't get discouraged here!

@@ -35,16 +35,6 @@ Melina Much, Ph.D. Candidate
 <li><p>We as researchers will formulate hypotheses, or have intuitions about relationships that exist in a given dataset.</p></li>
 </ul>
 </div>
-<div id="a-tale-of-two-data-forms" class="slide section level2">
-<h1>A Tale of Two Data Forms</h1>
-<ul>
-<li><p>When learning from our data we want to get as close as we can to understanding causal relationships. We want to know: does <span class="math inline">\(X\)</span> cause <span class="math inline">\(Y\)</span>? Our ability to do that changes based on the kinds of data we have.</p></li>
-<li><p><strong>Observational data</strong> comes from measuring a sample of the population, where we are not looking to effect the respondents, and we are not manipulating their environment. We are simply looking to <em>observe.</em> This data will have <strong>confounders,</strong> or variables that influence <span class="math inline">\(Y\)</span> that are not <span class="math inline">\(X\)</span> that we are not accounting for in our modeling.</p></li>
-<li><p><strong>Experimental data</strong> controls for external forces (variables hard to account for) by leveraging the benefits of random assignment. Experimental data has randomly assigned treatment and control groups, which alleviates the issues of confounders since the only functional difference between the groups is their arbitrary assignment into treatment or control.</p></li>
-<li><p><em>Experiments allow us to address causality because you can isolate the treatment effect. Observational studies do not. Observational studies can look at <strong>associations</strong>but never directly make causal claims.</em></p></li>
-<li><p>Our work will deal largely with observational data.</p></li>
-</ul>
-</div>
 <div id="kinds-of-variables" class="slide section level2">
 <h1>Kinds of Variables</h1>
 <ul>
@@ -61,7 +51,7 @@ Melina Much, Ph.D. Candidate
 <li><p>We call this relationship <span class="math inline">\(f\)</span>. In most cases we don’t know what <span class="math inline">\(f\)</span> is.</p></li>
 <li><p>Therefore the relationship between our inputs and outputs can be represented as:</p></li>
 </ul>
-<p><span class="math display">\[Y = f(x) + \epsilon\]</span> - In $Y = f(x) + $, <span class="math inline">\(\epsilon\)</span> represents a random error term that is independent of <span class="math inline">\(X\)</span>.</p>
+<p><span class="math display">\[Y = f(x) + \epsilon\]</span> - In <span class="math inline">\(Y = f(x) + \epsilon\)</span>, <span class="math inline">\(\epsilon\)</span> represents a random error term that is independent of <span class="math inline">\(X\)</span>.</p>
 </div>
 <div id="your-job-as-a-statistical-researcher" class="slide section level2">
 <h1>Your Job as a Statistical Researcher</h1>
@@ -70,7 +60,19 @@ Melina Much, Ph.D. Candidate
 </ul>
 <p><strong>The foundation of statistical learning is therefore specifying the functional form <span class="math inline">\(f\)</span> in the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. In other words <span class="math inline">\(f\)</span> is the <em>systematic</em> information that <span class="math inline">\(X\)</span> provides about <span class="math inline">\(Y\)</span></strong></p>
 <ul>
-<li>You have many options. Our job is to help prime you on how to choose an estimate of <span class="math inline">\(f\)</span> (<span class="math inline">\(\hat{f}\)</span>) and interpret $Y = f(x) + $.</li>
+<li><p>You have many options. Our job is to help prime you on how to choose an estimate of <span class="math inline">\(f\)</span>, which we will call <span class="math inline">\(\hat{f}\)</span>, and interpret <span class="math inline">\(Y = \hat{f}(x) + \epsilon\)</span>.</p></li>
+<li><p>Being able to specify the <span class="math inline">\(\hat{f}\)</span> well allows you to make good: <em>inferences</em> about your data (how <span class="math inline">\(X\)</span> relates to <span class="math inline">\(Y\)</span>), and <em>predictions</em> about new data (what would a new value of <span class="math inline">\(Y\)</span> likely if we knew <span class="math inline">\(X\)</span>).</p></li>
+</ul>
+</div>
+<div id="for-example" class="slide section level2">
+<h1>For Example</h1>
+<ul>
+<li>Say we are answering one of the earliest physics questions about ball trajectory.</li>
+</ul>
+<p><strong>We want to know how the strength of a person (input) relates to how far they can throw a ball (output). What is still left to specify?</strong></p>
+<ul>
+<li><p>We can specify the functional form of the ball trajectory <span class="math inline">\(\hat{f}\)</span> differently based on our guesses on how balls travel through space. Does it immediately drop? Does it reach a peak height and drop from there? Does it take a curved trajectory down? Each of those are our different specifications of <span class="math inline">\(\hat{f}\)</span>.</p></li>
+<li><p>Our specification of <span class="math inline">\(\hat{f}\)</span> will inherently change our guess of <span class="math inline">\(Y\)</span> how far the ball travels. That choice of <span class="math inline">\(\hat{f}\)</span> matters a ton!</p></li>
 </ul>
 </div>
 <div id="errors" class="slide section level2">
@@ -86,9 +88,30 @@ Melina Much, Ph.D. Candidate
 <div id="model-building-goals" class="slide section level2">
 <h1>Model Building Goals</h1>
 <ul>
-<li><p>This means that we want to build and use statistical models that get rid of as much reducible error as possible, within the constraints of the models that we are choosing</p></li>
-<li><p>There are <em>many</em> tradeoffs. This leads into discussions of traditional regression in comparison to more flexible machine learning models.</p></li>
-<li><p>There are also tradeoffs with</p></li>
+<li><p>Build and use statistical models that get rid of as much reducible error as possible.</p></li>
+<li><p>Balance the tradeoffs in model choice.</p>
+<ul>
+<li><p>The tradeoffs are with <strong>accuracy</strong> and <strong>interpretability.</strong></p></li>
+<li><p>Some models, particularly flexible machine learning algorithms are highly <strong>accurate</strong>, but the relationships between inputs and outputs remain unknown (are not <strong>interpretable</strong>) during the prediction process (black box models).</p></li>
+<li><p>Some models, particularly those in the regression framework (like we will see today), where you specify a functional form overtly, are highly <strong>interpretable,</strong> but are less <strong>accurate.</strong></p></li>
+</ul></li>
+</ul>
+</div>
+<div id="a-tale-of-two-data-forms" class="slide section level2">
+<h1>A Tale of Two Data Forms</h1>
+<ul>
+<li><p>When learning from our data we want to get as close as we can to understanding <strong>causal relationships.</strong> We want to know: does <span class="math inline">\(X\)</span> cause <span class="math inline">\(Y\)</span>? Our ability to do that changes based on the kinds of data we have.</p></li>
+<li><p><strong>Observational data</strong> comes from measuring a sample of the population, where we are not looking to effect the respondents, and we are not manipulating their environment. We are simply looking to <em>observe.</em> This data will have <strong>confounders,</strong> or variables that influence <span class="math inline">\(Y\)</span> that are not <span class="math inline">\(X\)</span> that we are not accounting for in our modeling.</p></li>
+<li><p><strong>Experimental data</strong> controls for external forces (variables hard to account for) by leveraging the benefits of random assignment. Experimental data has randomly assigned treatment and control groups, which alleviates the issues of confounders since the only functional difference between the groups is their arbitrary assignment into treatment or control.</p></li>
+<li><p><em>Experiments allow us to address causality because you can isolate the treatment effect. Observational studies do not. Observational studies can look at <strong>associations</strong>but never directly make causal claims.</em></p></li>
+<li><p>Our work will deal largely with observational data.</p></li>
+</ul>
+</div>
+<div id="textbook-recommendations" class="slide section level2">
+<h1>Textbook Recommendations</h1>
+<ul>
+<li><p>For a super intuitive way to frame statistical learning from regression all the way to machine learning look at the free <a href="https://link.springer.com/content/pdf/10.1007%2F978-1-0716-1418-1.pdf">Introduction to Statistical Learning</a>.</p></li>
+<li><p>For one of the best Social Science comprehensive approaches to uncertainty in Statistics, looking at both Bayesianism and Frequentism, see <a href="https://www.amazon.com/Regression-Stories-Analytical-Methods-Research/dp/110702398X">Regression and Other Stories</a>. Expensive, but worth it.</p></li>
 </ul>
 </div>
 
