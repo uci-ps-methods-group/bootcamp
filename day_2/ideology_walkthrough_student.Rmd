@@ -30,6 +30,11 @@ Say we wanted to explore the relationship between partisanship and gender, and i
 
 Another common way to look at data is through crosstabs! Crosstabs are tables with counts or percetages for different values of a variable.
 
+```{r}
+mean(cces_2016$partyid, na.rm = )
+
+```
+
 # Gender x Party ID
 
 ```{r, echo=FALSE}

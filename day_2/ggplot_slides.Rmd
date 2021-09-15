@@ -90,7 +90,9 @@ ggplot(aes(x = flipper_length_mm)) +
 
 ## Lets play with color! 
 
-Color and pipes! We can do it all. You can find more colors [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+- Color and pipes! We can do it all. You can find more colors [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+- Please note certain color palettes are less accessible than others. This palette is the default, and is less accessible to those who are red-green color blind.
 
 ```{r, message=FALSE, warning=FALSE}
 penguins %>% 
@@ -112,11 +114,12 @@ ggplot(aes(x = species, fill = island)) +
 
 ## Cont. 
 
-The second, we will make a standardized bar chart, which makes the total bar be out of 1. This allows us to look at proportions easily!
+The second, we will make a standardized bar chart, which makes the total bar be out of 1. This allows us to look at proportions easily! *Note the additional ylab layer.* 
 
 ```{r, message=FALSE, warning=FALSE}
 penguins %>% 
 ggplot(aes(x = species, fill = island)) + 
+        ylab("Percent") +
         geom_bar(position = "fill")
 ```
 
@@ -128,8 +131,8 @@ Lets look at bill length and species! We could use violins or boxplots. We will 
 penguins %>% 
 ggplot(aes(x = species,
            y = bill_length_mm, fill = species))  +
-  geom_violin()
-
+  geom_violin() +
+  geom_boxplot(width = .3)
 ```
 
 ## Two Variables - All Continuous Numeric!

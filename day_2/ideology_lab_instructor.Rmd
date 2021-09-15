@@ -68,7 +68,8 @@ Looking at all of these numbers, what can you say about the distribution, center
 Make a histogram of ideology, does the histogram confirm or refute what you thought ideology looked like based on the numbers?
 
 ```{r}
-ggplot(data = cces_2016, aes(x = ideology)) +
+ggplot(data = cces_2016, 
+       aes(x = ideology)) +
        geom_histogram(binwidth = 0.16) +
        labs(title = "")
 ```
