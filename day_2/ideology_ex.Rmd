@@ -59,6 +59,10 @@ Try using the summary() function to look at many of these elimants of partyid an
 summary(cces_2016$partyid)
 ```
 
+```{r}
+hist(cces_2016$partyid)
+```
+
 Looking at all of these numbers, what can you say about the distribution, center, and spread of ideology?
 
 Another common way to look at data is through crosstabs! Crosstabs are tables with counts or percetages for different values of a variable often against another variable.
@@ -66,7 +70,9 @@ Another common way to look at data is through crosstabs! Crosstabs are tables wi
 # Gender x Party ID
 
 ```{r, echo=FALSE}
-pander(prop.table(table(cces_2016$gender, cces_2016$partyid)))
+pander(
+  prop.table(
+  table(cces_2016$gender, cces_2016$partyid)))
 ```
 
 # Gender x Ideology
@@ -85,7 +91,7 @@ party <- ggplot(data = cces_2016, aes(x = gender, y = partyid)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
   labs(title = "")
-
+party
 ideology <- ggplot(data = cces_2016, aes(x = gender, y = ideology)) +
   geom_boxplot()  +
   theme(legend.position = "right") +
@@ -119,6 +125,8 @@ t.test(ideology ~ gender, data = cces_2016) # T test for Ideology
 
 
 ```{r}
+0.2585213     -     0.1972236 
+0.06/7
 t.test(partyid ~ gender, data = cces_2016) # T test for Ideology
 ```
  
