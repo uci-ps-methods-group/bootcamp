@@ -17,7 +17,6 @@ Load in our packages.
 
 ```{r, message=FALSE}
 library(pander)
-library(mosaic)
 library(tidyverse)
 library(gridExtra)
 ```
@@ -31,7 +30,6 @@ cces_2016 <- read.csv("~/Desktop/R Things/bootcamp/day_2/cces_2016.csv")
 *Identify your variables of interest for this question. Use your codebook! :)*
 
 I want to use the "black", "idioligy", and "partyid" varaibuls to do this analaisis. 
-
 
 # Data Exploration
 
