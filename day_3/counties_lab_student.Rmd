@@ -1,0 +1,63 @@
+---
+title: "Introdution to Regression Lab Student"
+author: "Melina Much and Kyle McWagner, Ph.D. Candidate"
+date: "9/15/2021"
+output: html_document
+---
+### Background
+
+Counties or parishes vary across the United States in many ways the counties dataset represents a random sample of 618 counties and parishes and has 28 variables that collectively describe these counties. I want to use regression to know if more educated counties are more or less electorally competitive than less educated counties.
+
+What variables are you going to use to measure the competitiveness of the election, the education level in the county? Note that there are several different options you might choose from to represent some of these variables. Why did you pick the ones that you did? 
+
+**Read in your data**
+
+```{r}
+```
+
+**Libraries**
+
+```{r}
+#library(mosaic)
+library(tidyverse)
+library(sjPlot)
+```
+
+**Make a ggplot with the variables you selected.**
+
+```{r}
+
+```
+
+**Build a regression model with these variables and look at the model output.**
+
+```{r}
+
+```
+
+**Make a nice table like you might see in a part of your model output.**
+
+```{r}
+```
+
+**What is the nature of the relationship between the education of the county and its competitiveness?**
+
+**Why might this be the case?**
+
+
+Now say that you hypothesized that Metro counties where driving this relationship and that you wouldn't not see this same relationships in non-metro counties to test this hypothesis, you would build an interaction between the type of county and the education level of the county into your model.
+
+Build a ggplot that takes this interaction into account.
+
+```{r}
+
+```
+
+**Build a regression model that takes this interaction into account**
+
+```{r}
+
+```
+
+Given the regression output and the interaction plot, would you argue that there is a meaningful interaction between the metro or non-metro status of a county?
+

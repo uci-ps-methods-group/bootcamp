@@ -1,0 +1,75 @@
+---
+title: "Introduction to Regression Counties Lab"
+author: "Instructors"
+output: html_document
+---
+
+### Background
+
+Counties or parishes vary across the United States in many ways the counties dataset represents a random sample of 618 counties and parishes and has 28 variables that collectively describe these counties. I want to use regression to know if more educated counties are more or less electorally competitive than less educated counties.
+
+What variables are you going to use to measure the competitiveness of the election, the education level in the county? Note that there are several different options you might choose from to represent some of these variables. Why did you pick the ones that you did? 
+
+**Read in your data**
+
+```{r}
+counties_2016_sample_bootcamp <- read.csv("~/Desktop/R Things/bootcamp/day_3/counties_2016_sample_bootcamp")
+```
+
+**Libraries**
+
+```{r}
+#library(mosaic)
+library(tidyverse)
+library(sjPlot)
+```
+
+**Make a ggplot with the variables you selected.**
+
+```{r}
+ggplot(counties_2016_sample_bootcamp,
+       aes(x=bd_h, y=per_point_diff)) +
+       geom_point() +
+       stat_smooth(method = "lm")
+```
+
+**Build a regression model with these variables and look at the model output.**
+
+```{r}
+mod_1 <- lm(per_point_diff ~ bd_h, counties_2016_sample_bootcamp)
+
+summary(mod_1)
+```
+
+**Make a nice table like you might see in a part of your model output.**
+
+```{r}
+tab_model(mod_1)
+```
+
+**What is the nature of the relationship between the education of the county and its competitiveness?**
+
+**Why might this be the case?**
+
+
+Now say that you hypothesized that Metro counties where driving this relationship and that you wouldn't not see this same relationships in non-metro counties to test this hypothesis, you would build an interaction between the type of county and the education level of the county into your model.
+
+Build a ggplot that takes this interaction into account.
+
+```{r}
+ggplot(counties_2016_sample_bootcamp,
+       aes(x=bd_h, y=per_point_diff, color=county_type)) +
+       geom_point() +
+       stat_smooth(method = "lm")
+```
+
+**Build a regression model that takes this interaction into account**
+
+```{r}
+mod_2 <- lm(per_point_diff ~ bd_h * county_type, counties_2016_sample_bootcamp)
+
+summary(mod_2)
+```
+
+Given the regression output and the interaction plot, would you argue that there is a meaningful interaction between the metro or non-metro status of a county?
+

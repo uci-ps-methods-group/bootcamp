@@ -1,0 +1,93 @@
+---
+title: "regression_student_walkthrough"
+author: "Melina Much and Kyle McWagner, Ph.D. Candidate"
+date: "9/15/2021"
+output: html_document
+---
+---
+title: "Bootcamp Intro to Regression"
+output: html_document
+---
+
+```{r}
+polity <- read.csv("~/Desktop/R Things/bootcamp/day_3/polity.csv")
+```
+
+```{r}
+library(tidyverse)
+library(sjPlot)
+```
+
+### Background
+How stable is a state? This is a frequently asked question in Political Science and in politics generally. Governments, the media, and your friends and relatives often want to know if a regime is going to fall or how stable a regime is. Your job is to use this data set in order to test a specific question about how fragile a state is. In order to do this we are using the polity data set which contains over a hundred countries that were measured every several years and includes a continuous measure of state fragility (a composite index compiled for the Fund For Peace and is constructed to consider the cohesion, economy, politics, and social factors of a country). Higher scores correspond to more fragility. The data set also contains many other state level variables. One of these is the state's estimated level of corruption.
+
+### Research Question & Hypothesis
+
+**Dose a states electoral democracy score effect affect state fragility?**
+
+$H_o$: The level of corruption in a state has no affect on state fragility.
+
+$H_a$: The level of corruption in a state affects a state's fragility.
+
+Lets talk about some things to be careful of when using linear regression.
+
+**Linear Relation**: This means the true relationship between Y and X is linear ($f$). Applying linear regression when this is not true will lead to suboptimal outcomes/predictions/inferences.
+
+**Outliers and high leverage points**: Some data points because of there location either on the X or Y axis can impact your regression in way that you should be aware of, it can influence your results in ways that can change interpretations.
+
+There are more of these "assumptions," but for now we will leave it at that. When you take Ines's class and she is talking about the other assumptions, be sure you are paying attention. They are very important and your results will not mean what you think they mean if the assumptions are not met. 
+
+
+**In the chunk below, fit a linear regression with state_fragility as the output (dependent), and elec_dem as the input (independent).**
+
+```{r}
+
+```
+
+**Take your regression object, and put it into a table generator function to make the results presentable for homework, conferences, or papers.**
+
+```{r}
+```
+
+###Interpreting the Different Tables
+
+- Intercept: Estimate
+
+- elec_dem: Estimate, Std. Error, t-value, p-value
+
+- Model: Residual standard error, degrees of freedom, Multiple R-squared, Adjusted R-squared
+
+**Make a ggplot with your two variables, and add a line for the regression that we fit.**
+
+```{r}
+
+```
+
+### Where did this line come from?
+
+Ordinal least squares (OLS) is the line that minimizes the squared the distance between each of the points and the line its self.  
+
+### Review all of those coefficients in light of the graph.
+
+- Intercept:Estimate
+- elec_dem: Estimate, Std. Error
+- Model: Residual standard error, Adjusted R-squared
+
+
+### Lets think about the $f$ of this linear model.
+
+Is this relationship actually linear? Is our $\hat{f}$ doing a good job getting at $f$?
+
+Lets think about the comparative context that we are looking at. 
+
+```{r}
+
+```
+
+Lets check out some graphs for this!
+
+```{r}
+
+```
+
+
