@@ -17,11 +17,13 @@ output: slidy_presentation
 
 ## Transformation
 
-- In order for our predictions to make sense, we need to transform our inputs to work within a $0-1$ scale. 
+- In order for our predictions to make sense, we need to transform our inputs to work within a $0-1$ scale. This is a probabilty $p$. 
 
 - This works within the Maximum Likelihood (MLE) framework.
 
 - We do this transformation by using **link** functions (specifically the **logit link function**), which connects the predictors in a model with the expected value of the dependent (output) variable in a linear way, and makes the expected value be a probability bounded between $0-1$.
+
+- Then we use $p$ to calculate odds, and log odds, which are not bounded at $0-1$ to make them work in a regression setting with inputs that aren't bounded.
 
 
 ## Logit Link Function
@@ -45,7 +47,9 @@ $$
 
 - Coefficients are reflected in log odds which are reflected as $log(\frac{p}{1-p})$. 
 
-- We can interpret them by exponentiating the log odds (to cancel out the log), and interpret them as odds ratios. 
+- We can interpret them by exponentiation the log odds (to cancel out the log), and interpret them as odds ratios.
+
+- Now we can say that for a one unit increase in temperature, the odds of O-Ring failure (versus not failing) decrease by a factor of 7.928171e-01, or 20%. We get 20% by taking $1 - .7928171$. 
 
 ```{r, message=FALSE}
 library(alr4)
@@ -112,4 +116,17 @@ pred <- predict(chall.glm, data.frame(temp = 31), type = 'response')
 pred
 
 ```
+
+
+
+## The Recap
+
+- Logit is for dependent variables (outputs) that are binary $0-1$.
+
+- We have to use a **logit link function** to bound how our predictors relate to our output between 0-1 as a probability, $p$. 
+
+- Coefficients from regression are **log odds** - $log(\frac{p}{1-p})$
+
+- We exponential **log odds** to turn them into **odds ratios** which are directly interpretable.
+
 
