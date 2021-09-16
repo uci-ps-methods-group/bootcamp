@@ -9,7 +9,7 @@ output: slidy_presentation
 
 - In choosing our $\hat{f}$ we need to look at our data to understand what sort of options are logical. 
 
-- In the cases we had yesterday, we had data that appeared to be linearly related with continuous outputs, therefore linear regression was a great option.
+- In the cases we had yesterday, we had data that appeared to be linearly related with continuous outputs, therefore linear regression was a great option to choose as our $\hat{f}$.
 
 - Today we will explore a common case when linearity does not apply. Often researchers will have an outcome variable that is binary. This means the outcome is either $0$ or $1$. This usually is found in cases of whether an event did or did not happen.
 
@@ -36,9 +36,80 @@ $$
 
 - Because our $\beta$'s are run through this *link function* they are not directly interpretable in the same way linear regression $\beta$'s.
 
-- We interpret logged odds instead, which are the odds of 
-
-
 ## Lets Break it Down on a Graph
 
+- Whiteboard example for mice obesity and weight.
+
+
+## What to do with Logit Coefficients
+
+- Coefficients are reflected in log odds which are reflected as $log(\frac{p}{1-p})$. 
+
+- We can interpret them by exponentiating the log odds (to cancel out the log), and interpret them as odds ratios. 
+
+```{r, message=FALSE}
+library(alr4)
+library(mosaic)
+library(DT)
+library(pander)
+library(tidyverse)
+```
+
+```{r}
+glimpse(Challeng)
+
+chall.glm <- glm(fail > 0 ~ temp, 
+                 data = Challeng, 
+                 family = binomial)
+
+chall.glm %>% 
+  summary() %>% 
+    pander()
+
+chall.glm %>% 
+  coef() %>% 
+    exp()
+```
+
+## Measures of Model Fit, how are we doing?
+
+- No longer have $R^2$, we now have null and residual deviance.
+
+- **Null deviance:** shows how well the response is predicted by the model with nothing but an intercept.
+
+- **Residual deviance:** shows how well the response is predicted by the model you specified.
+
+*If Residual < Null, your model is doing better than if you specified no independent variables at all.* 
+
+## Lets Make a Picture
+
+Bear in mind the challenger was launched at 31 degrees outside. Would we expect O-Rings to fail at this temp?
+
+```{r}
+plot(fail>0 ~ temp, 
+      data=Challeng, 
+      xlab="Outside Temperature at Time of Launch (Fahrenheit)", 
+      ylab='Probability of At least One O-ring Failing', 
+      pch=16, 
+      main="NASA Shuttle Launch Data from 1981 to 1985", 
+      xlim=c(30,85))
+      curve(exp(15.043-0.232*x)/(1+exp(15.043-0.232*x)), add=TRUE)
+      abline(v=31, lty=2, col="lightgray")
+      text(31,0.3,"Outside Temp on Jan. 28, 1986 was 31", pos=4, cex=0.7, col="lightgray")
+      abline(h=c(0,1), lty=1, col=rgb(.2,.2,.2,.2))
+      legend("right", bty="n", legend=c("Previous Launches"), pch=16, col="black", cex=0.7)
+
+```
+
+## A Quick Prediction Task
+
+How likely was the O-Ring failure for the Challenger launch? 
+
+```{r}
+
+pred <- predict(chall.glm, data.frame(temp = 31), type = 'response')
+
+pred
+
+```
 
